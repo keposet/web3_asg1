@@ -3,7 +3,7 @@ import React from 'react'
 const FavoriteItem = function (props) {   
     return (       
         <li className="favorite">
-            <img src="" className="later" alt="OMGIWASGETTINGANERRORFROMNOTHAVINGANALT"/>
+            <img src="" className="later" alt="OMGIWASGETTINGANERRORFROMNOTHAVINGANALTAAAAA"/>
             <button className="closeButton">
                 <i></i>
             </button>

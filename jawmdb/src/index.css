@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.movies {
+  display: grid;
+
+}
+
+.favorites {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-auto-flow: column;
+
+  align-items: center;
+  grid-gap: 5px;
+  background: var(--favorites-back);
+  color: var(--header-back);
+  padding: 5px;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+}

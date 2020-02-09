@@ -5,7 +5,7 @@ import DefaultView from './components/DefaultView';
 class App extends React.Component {
   constructor(props) {   
     super(props);   
-    this.state = { favorites: [] }; 
+    this.state = { favorites: [1] }; 
   }
 
   render() {

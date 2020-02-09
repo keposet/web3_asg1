@@ -7,7 +7,7 @@ class FavoritesList extends React.Component {
             <div>
                 <h3> Favorites </h3>
                 <ul className="favorites">
-                    {this.props.favorites.map( (fav) => <FavoriteItem />)}
+                    {this.props.favorites.map( (fav, ind) => <FavoriteItem key={ind}/>)}
                 </ul>
             </div>
 
