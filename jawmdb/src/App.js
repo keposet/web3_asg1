@@ -1,6 +1,10 @@
 import React from 'react';
 import './App.css';
 import DefaultView from './components/DefaultView';
+import { Route } from 'react-router-dom';
+import HomeView from './components/HomeView';
+
+
 
 class App extends React.Component {
   constructor(props) {   
@@ -11,7 +15,12 @@ class App extends React.Component {
   render() {
     return (
       <main>
-        <DefaultView favorites={this.state.favorites} />
+        <HomeView />
+        <Route path='/showAll' exact 
+          render={ (props) =>
+            <DefaultView favorites={this.state.favorites} />
+          }
+        />
       </main>
     );
   }
