@@ -51,9 +51,23 @@ code {
   font-size: 0.8em;
   font-weight: bold;
   text-transform: uppercase;
+
+  grid-column-start: 1;
+  grid-column-end: 4;
 }
 
+.default-view {
+  display: grid;
+  grid-template-rows: 100px 1fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
 
+
+}
+
+.header {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
 
 .list{
   display: grid;
