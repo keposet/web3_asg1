@@ -36,7 +36,10 @@ class MovieList extends React.Component {
                 <h3>Title</h3>
                 <h3>Year</h3>
                 <h3>Rating</h3>
-                {this.state.movies.map( (m) => <MovieItem title={m.title} poster={m.poster} rating={m.ratings.average} year={m.release_date} key={m.id}/>)}
+                <ul className='moviesList'>
+                    {this.state.movies.map( (m) => <MovieItem title={m.title} poster={m.poster} rating={m.ratings.average} year={m.release_date} key={m.id}/>)}
+                </ul>
+                
             </div>
         );
     }

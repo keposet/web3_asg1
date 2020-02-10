@@ -62,11 +62,26 @@ code {
 
   grid-template-columns: 1fr 1fr 1fr;
 
+  width: 1000px;
+  height: 750px;
+
 }
-.list h2{
+.list h2 {
   align-items: center;
   grid-column-start: 1;
   grid-column-end: 4;
+}
+
+.moviesList {
+  align-items: center;
+  grid-column-start: 1;
+  grid-column-end: 4;
+
+  overflow: scroll;
+}
+
+.list h3 {
+  text-align: center;
 }
 
 .movieItem {
@@ -74,7 +89,6 @@ code {
   background: var(--list-box-back);
   color: var(--header-back);
 
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr;
+
+  grid-template-columns: 1fr 3fr 1fr 1fr 20px 20px;
 }
