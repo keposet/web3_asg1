@@ -4,7 +4,7 @@ class MovieItem extends React.Component {
     render() {
         const url = "https://image.tmdb.org/t/p/w92";
         return (
-            <div>
+            <div className='movieItem'>
                 <img src={`${url}${this.props.poster}`} alt={this.props.title} />
                 <p>{this.props.title}</p>
                 <p>{this.props.year}</p>

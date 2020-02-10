@@ -1,3 +1,24 @@
+/* purple + orange + blues
+ :root {
+  --list-back: #bccbde;
+  --details-back: #e6e9f0;
+  --header-back: #431c5d;
+  --button-back: #e05915;
+  --border-color: #c2dde6;
+  --box-back: white;
+} */
+
+:root {
+  --list-back: #2b7a78;
+  --favorites-back: #def2f1;
+  --details-back: #feffff;
+  --details-box-back: #def2f1;
+  --header-back: #17252A;
+  --button-back: #3aafa9;
+  --border-color: #c2dde6;
+  --list-box-back: #feffff;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -30,4 +51,30 @@ code {
   font-size: 0.8em;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+
+
+.list{
+  display: grid;
+  background: var(--favorites-back);
+  color: var(--header-back);
+
+  grid-template-columns: 1fr 1fr 1fr;
+
+}
+.list h2{
+  align-items: center;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.movieItem {
+  display: grid;
+  background: var(--list-box-back);
+  color: var(--header-back);
+
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr;
 }

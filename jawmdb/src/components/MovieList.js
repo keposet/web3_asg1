@@ -31,9 +31,11 @@ class MovieList extends React.Component {
 
     renderList() {
         return(
-            <div>
+            <div className='list'>
                 <h2>List/Match</h2>
-                <h3>Title Year Rating</h3>
+                <h3>Title</h3>
+                <h3>Year</h3>
+                <h3>Rating</h3>
                 {this.state.movies.map( (m) => <MovieItem title={m.title} poster={m.poster} rating={m.ratings.average} year={m.release_date} key={m.id}/>)}
             </div>
         );
@@ -41,7 +43,7 @@ class MovieList extends React.Component {
 
     renderLoading() {
         return(
-            <div>
+            <div className='list'>
             Loading hahaha
             </div>
         );
