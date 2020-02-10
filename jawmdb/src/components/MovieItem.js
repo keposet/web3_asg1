@@ -10,6 +10,7 @@ class MovieItem extends React.Component {
                 <p>{this.props.year}</p>
                 <p>{this.props.rating}</p>
                 <button>♥</button>
+                <button>View</button>
             </div>
         )
     }
