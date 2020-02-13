@@ -1,28 +1,34 @@
-import React from 'react'
+import React from 'react';
 
 class MovieFilter extends React.Component {
-    state = {filterCritiria: {title:"", year:"", rating:""} };
+    state = {filterCritiria: {title:"", yearUpper:"", year:"", rating:""} };
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(e);
-        this.props.filter();
+        
+        this.props.filter(this.state.filterCritiria);
     }
 
     clearFilters = (e) => {
-
+        this.props.clear();
     }
 
     handleChange = (e) => {
-        const updatedFilter = {...this.filterCritiria};
+        const updatedFilter = {...this.state.filterCritiria};
         updatedFilter[e.currentTarget.name] = e.currentTarget.value;
-        console.log(updatedFilter);
         this.setState({ filterCritiria: updatedFilter} );
     }
 
     handleRadioChange = (e) => {
         const selected = e.target.value;
-        this.setState({ selected });
+        let yearUpperBound = "";
+        if(selected === "BETWEEN") {
+            yearUpperBound = document.querySelector("input[name='yearUpper']").value;
+        }
+        const updatedFilter = {...this.state.filterCritiria};
+        updatedFilter['year'] = e.target.nextElementSibling.value;
+        updatedFilter['yearUpper'] = yearUpperBound;
+        this.setState({ selected:selected , filterCritiria:updatedFilter});
     }
     render() {
         const years = ['Before', 'After'];
@@ -43,7 +49,7 @@ class MovieFilter extends React.Component {
                                 checked={this.state.selected === year.toUpperCase()} 
                                 onChange={this.handleRadioChange} /> 
                             {year} 
-                            <input className="input" type="text" disabled={this.state.selected !== year.toUpperCase()}/>
+                            <input className="input" type="number" name="year" disabled={this.state.selected !== year.toUpperCase()} onChange={this.handleChange}/>
                     </label> 
                     )}
 
@@ -55,8 +61,8 @@ class MovieFilter extends React.Component {
                             checked={this.state.selected === "BETWEEN"} 
                             onChange={this.handleRadioChange} /> 
                         Between
-                        <input className="input" type="text" disabled={this.state.selected !== "BETWEEN"}/>
-                        <input className="input" type="text" disabled={this.state.selected !== "BETWEEN"}/>
+                        <input className="input" type="number" name="year" disabled={this.state.selected !== "BETWEEN"} onChange={this.handleChange}/>
+                        <input className="input" type="number" name="yearUpper" disabled={this.state.selected !== "BETWEEN"} onChange={this.handleChange}/>
                     </label> 
                     
 

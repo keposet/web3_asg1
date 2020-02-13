@@ -33,8 +33,20 @@ class DefaultView extends React.Component {
         }
     }
 
-    filter = () => {
+    clear = () => {
+        const filtered = this.filterByTitle(this.state.movies, "");
+        this.setState( { filteredMovies: filtered } );
+    }
+
+    filter = (filterList) => {
         console.log("Filtering");
+        const filtered = this.filterByTitle(this.state.movies, filterList.title);
+        this.setState( {filteredMovies: filtered } );
+    }
+
+    filterByTitle = (movies, title) => {
+        //Take the list of movies, and for each movie check if the desired title is contained. If not remove it from the list.
+        return movies.filter( (movie) => movie.title.toLowerCase().indexOf(title.toLowerCase()) !== -1)
     }
 
     render() {
@@ -42,7 +54,7 @@ class DefaultView extends React.Component {
             <div className="default-view">
                 <Header />
                 < FavoritesList favorites={ this.props.favorites } />
-                < MovieFilter filter={this.filter} />
+                < MovieFilter filter={this.filter} clear={ this.clear} />
                 < MovieList movies={ this.state.filteredMovies } />
             </div>         
         ); 
