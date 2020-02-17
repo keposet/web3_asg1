@@ -11,6 +11,9 @@ class App extends React.Component {
     super(props);   
     this.state = { favorites: [1] }; 
   }
+  viewMovie = (id) => {
+    // add to state? 
+  }
 
   render() {
     return (
