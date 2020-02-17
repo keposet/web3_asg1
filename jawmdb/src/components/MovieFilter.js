@@ -91,6 +91,7 @@ class MovieFilter extends React.Component {
 
                     <button>Filter</button>
                     <button type="button" onClick={this.clearFilters}>Clear</button>
+                    <button type="button" onClick={this.hidePanel}>Hide</button>
 
                 </fieldset>
             </form>
