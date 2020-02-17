@@ -9,7 +9,7 @@ class MovieDetail extends Component {
         this.props.handleFave(id);
     }
     render() { 
-        return ( 
+        return (
             <div className="idk">
                 <div className="poster-detail">
                     <h2 name="title">{this.props.title}</h2>
