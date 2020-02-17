@@ -1,11 +1,12 @@
 import React from 'react';
+import YearFilter from './YearFilter'
 
 class MovieFilter extends React.Component {
     state = {filterCritiria: {title:"", yearUpper:"", year:"", rating:""} };
 
     handleSubmit = (e) => {
         e.preventDefault();
-        
+        console.log(this.state.filterCritiria);
         this.props.filter(this.state.filterCritiria);
     }
 
@@ -19,19 +20,13 @@ class MovieFilter extends React.Component {
         this.setState({ filterCritiria: updatedFilter} );
     }
 
-    handleRadioChange = (e) => {
-        const selected = e.target.value;
-        let yearUpperBound = "";
-        if(selected === "BETWEEN") {
-            yearUpperBound = document.querySelector("input[name='yearUpper']").value;
-        }
+    handleYearChange = (yearLower, yearUpper) => {
         const updatedFilter = {...this.state.filterCritiria};
-        updatedFilter['year'] = e.target.nextElementSibling.value;
-        updatedFilter['yearUpper'] = yearUpperBound;
-        this.setState({ selected:selected , filterCritiria:updatedFilter});
+        console.log(yearLower + " " + yearUpper);
     }
+
     render() {
-        const years = ['Before', 'After'];
+
         return(
             <form className="filter" onSubmit={this.handleSubmit} >
                 <fieldset id="box">
@@ -39,33 +34,7 @@ class MovieFilter extends React.Component {
                     <label className="label">Title</label>
                     <input className="input" type="text" name="title" onChange={this.handleChange} />
 
-                    <label className="label">Year</label>
-                    {years.map( (year, ind) => 
-                        <label> 
-                            <input 
-                                className="input" 
-                                type="radio" 
-                                value={year.toUpperCase()} 
-                                checked={this.state.selected === year.toUpperCase()} 
-                                onChange={this.handleRadioChange} /> 
-                            {year} 
-                            <input className="input" type="number" name="year" disabled={this.state.selected !== year.toUpperCase()} onChange={this.handleChange}/>
-                    </label> 
-                    )}
-
-                    <label> 
-                        <input 
-                            className="input" 
-                            type="radio" 
-                            value="BETWEEN" 
-                            checked={this.state.selected === "BETWEEN"} 
-                            onChange={this.handleRadioChange} /> 
-                        Between
-                        <input className="input" type="number" name="year" disabled={this.state.selected !== "BETWEEN"} onChange={this.handleChange}/>
-                        <input className="input" type="number" name="yearUpper" disabled={this.state.selected !== "BETWEEN"} onChange={this.handleChange}/>
-                    </label> 
-                    
-
+                    <YearFilter handleChange={ this.handleChange } handleYearChange={ this.handleYearChange } />
                     
                     <label className="label">Rating</label>
                     <label> 
