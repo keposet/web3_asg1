@@ -12,7 +12,7 @@ class CastItem extends Component {
             <div className="Cast-Item">
                 <div className="Character-Name">{this.props.character}</div>
                 <div className="Credit-Name">{this.props.name}</div>
-                <button className="Credit-button" onClick={}>View🔭</button>
+                <button className="Credit-button" onClick={this.viewCredit(this.props.LOLIDK)}>View🔭</button>
             </div>
          );
     }

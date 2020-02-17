@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class MovieDetail extends Component {
     state = {  };
     width = "w185";
-    posterURL =`https://image.tmdb.org/t/p/${width}/`;
+    posterURL =`https://image.tmdb.org/t/p/${this.width}/`;
 
     handleFave= (id) => {
         this.props.handleFave(id);
