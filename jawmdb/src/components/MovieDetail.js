@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import StarRating from './StarRating';
+import DetailStub from "./DetailStub";
 
 class MovieDetail extends Component {
     
 
     width = "w185";
     posterURL =`https://image.tmdb.org/t/p/${this.width}/`;
+    tmdbURL = "https://www.themoviedb.org/movie/";
+    imdbURL= "https://www.imdb.com/title/";
         
 
     handleFave= (id) => {
@@ -14,7 +17,11 @@ class MovieDetail extends Component {
 
     render( ) { 
         const film = this.props.film;
+        let revenue = film.revenue;
+        revenue = revenue/1000000;
+        revenue = Number.parseFloat(revenue).toPrecision(5);
         console.log(film);
+
         return ( 
             <div className="Film-Detail">
                 <div className="Title-Card">
@@ -27,32 +34,22 @@ class MovieDetail extends Component {
                         <h3>Overview</h3>
                              <p>{film.details.overview}</p>
                     </div>
-                    <div className="IDK">
+                    <div className="Release-Stub">
                         <h5>Release Date:</h5>
                         <p>{film.release_date}</p>
-                        <h5>Revenue</h5><p>${film.revenue}</p>
+                        <h5>Revenue</h5><p>${revenue} Million</p>
                         <h5>Rating</h5>
-                        <p>
-                            {
-                                // gotta make stars
-                                // film.ratings.average gives number
-                                // x.0 to x.3 == 0 x.4-x.6 = 0.5 0.7+ = 1
-                                // seems like a functional component would be necessary
-                                
-                            }
-
-                        </p>
-                        {console.log('MovieDetail film state')}
-                        {console.log(film)}
                         <StarRating rating={film.ratings.average}/>
                         <h5>Links</h5>
                         <p>
-                            <a href=''>tmdb</a>
-                            <a href=''>IMDB</a>
+                            <a href={`${this.tmdbURL}${film.tmdb_id}`}>tmdb</a>
+                            <a href={`${this.imdbURL}${film.imdb_id}`}>IMDB</a>
                         </p>
-                    </div>
-                    
-
+                    </div>                    
+                    <DetailStub title="Companies" data={film.production.companies}/>
+                    <DetailStub title="Countries" data={film.production.countries}/>
+                    <DetailStub title="Keywords" data={film.details.keywords}/>
+                    <DetailStub title="Genres" data={film.details.genres}/>
                 </div>
                 
 
