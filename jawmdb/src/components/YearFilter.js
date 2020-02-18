@@ -21,7 +21,8 @@ class YearFilter extends React.Component {
 
     render() {
         return(
-            <label className="label">Year
+            <label className="label"> 
+                <div className="filterHeading">Year</div>
                 <label> 
                     <input 
                         className="input" 
