@@ -25,7 +25,6 @@ class DefaultView extends React.Component {
                   }
                 return 0
             } );
-            console.log(jsonData);
             this.setState( { loading:false, movies: jsonData, filteredMovies: jsonData} );
         }
         catch (error) {

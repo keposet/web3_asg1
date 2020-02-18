@@ -4,7 +4,6 @@ import MovieItem from './MovieItem'
 class MovieList extends React.Component {
 
     render() {
-        console.log(this.props.movies);
         return (
             
             <div className='list'>
