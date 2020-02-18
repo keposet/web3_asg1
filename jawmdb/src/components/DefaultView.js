@@ -40,13 +40,39 @@ class DefaultView extends React.Component {
 
     filter = (filterList) => {
         console.log("Filtering");
-        const filtered = this.filterByTitle(this.state.movies, filterList.title);
+        let filtered = this.filterByTitle(this.state.movies, filterList.title);
+        filtered = this.filterByYear(filtered, filterList.year, filterList.yearUpper);
         this.setState( {filteredMovies: filtered } );
     }
 
     filterByTitle = (movies, title) => {
         //Take the list of movies, and for each movie check if the desired title is contained. If not remove it from the list.
         return movies.filter( (movie) => movie.title.toLowerCase().indexOf(title.toLowerCase()) !== -1)
+    }
+
+    filterByYear = (movies, lowerBound, upperBound) => {
+        console.log("filtering by year");
+        if(lowerBound == null || lowerBound === "") {
+            lowerBound = 0;
+        }
+
+        if(upperBound == null || upperBound === "") {
+            let today = new Date();
+            upperBound = today.getFullYear();
+        }
+
+        console.log(lowerBound + " " + upperBound);
+
+        const updatedMovies = movies.filter( (movie) => {
+                let [year] = movie.release_date.split('-');
+                return year > lowerBound && year < upperBound 
+            });
+        return updatedMovies;
+    }
+
+    parseDate = (date) => {
+        let [year, month, day] = date.split('-');
+        return year;
     }
 
     render() {

@@ -5,7 +5,7 @@ class YearFilter extends React.Component {
 
     handleRadioChange = (e) => {
         const selected = e.target.value;
-        let yearUpperBound = -1;
+        let yearUpperBound = "";
         if(selected === "BETWEEN") {
             yearUpperBound = document.querySelector("input[name='yearUpper'].between").value;
         } 
@@ -15,7 +15,7 @@ class YearFilter extends React.Component {
         updatedFilter[e.target.nextElementSibling.name] = e.target.nextElementSibling.value;  
 
         this.props.handleYearChange(updatedFilter['year'], updatedFilter['yearUpper']);
-        
+
         this.setState({ selected:selected });
     }
 

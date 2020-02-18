@@ -17,12 +17,14 @@ class MovieFilter extends React.Component {
     handleChange = (e) => {
         const updatedFilter = {...this.state.filterCritiria};
         updatedFilter[e.currentTarget.name] = e.currentTarget.value;
-        this.setState({ filterCritiria: updatedFilter} );
+        this.setState( { filterCritiria: updatedFilter} );
     }
 
     handleYearChange = (yearLower, yearUpper) => {
         const updatedFilter = {...this.state.filterCritiria};
-        console.log(yearLower + " " + yearUpper);
+        updatedFilter['year'] = yearLower;
+        updatedFilter['yearUpper'] = yearUpper;
+        this.setState( {filterCritiria: updatedFilter} );
     }
 
     render() {
