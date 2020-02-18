@@ -88,6 +88,7 @@ class DefaultView extends React.Component {
                 < MovieList 
                     movies={ this.state.filteredMovies }
                     handleView={ this.props.handleView }
+                    loading={ this.state.loading }
                  />
             </div>         
         ); 

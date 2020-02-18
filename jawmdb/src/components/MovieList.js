@@ -12,7 +12,7 @@ class MovieList extends React.Component {
             <h3>Title</h3>
             <h3>Year</h3>
             <h3>Rating</h3>
-            <div className='loading'>
+            <div className='loading' hidden={ !this.props.loading } >
             Loading hahaha
             </div>
             <ul className='moviesList'>
