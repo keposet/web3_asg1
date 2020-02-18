@@ -25,7 +25,6 @@ class DefaultView extends React.Component {
                   }
                 return 0
             } );
-            console.log(jsonData);
             this.setState( { loading:false, movies: jsonData, filteredMovies: jsonData} );
         }
         catch (error) {
@@ -39,9 +38,9 @@ class DefaultView extends React.Component {
     }
 
     filter = (filterList) => {
-        console.log("Filtering");
         let filtered = this.filterByTitle(this.state.movies, filterList.title);
         filtered = this.filterByYear(filtered, filterList.year, filterList.yearUpper);
+        filtered = this.filterByRating(filtered, filterList.ratingLower, filterList.ratingUpper);
         this.setState( {filteredMovies: filtered } );
     }
 
@@ -51,7 +50,6 @@ class DefaultView extends React.Component {
     }
 
     filterByYear = (movies, lowerBound, upperBound) => {
-        console.log("filtering by year");
         if(lowerBound == null || lowerBound === "") {
             lowerBound = 0;
         }
@@ -61,8 +59,6 @@ class DefaultView extends React.Component {
             upperBound = today.getFullYear();
         }
 
-        console.log(lowerBound + " " + upperBound);
-
         const updatedMovies = movies.filter( (movie) => {
                 let [year] = movie.release_date.split('-');
                 return year > lowerBound && year < upperBound 
@@ -70,10 +66,18 @@ class DefaultView extends React.Component {
         return updatedMovies;
     }
 
-    parseDate = (date) => {
-        let [year, month, day] = date.split('-');
-        return year;
+    filterByRating = (movies, lowerBound, upperBound) => {
+        if(lowerBound == null || lowerBound === "") {
+            lowerBound = -1;
+        }
+
+        if(upperBound == null || upperBound === "") {
+            upperBound = 11;
+        }
+
+        return movies.filter( (movie) => movie.ratings.average > lowerBound && movie.ratings.average < upperBound );
     }
+
 
     render() {
         return (       
@@ -83,7 +87,7 @@ class DefaultView extends React.Component {
                 < MovieFilter filter={this.filter} clear={ this.clear} />
                 < MovieList 
                     movies={ this.state.filteredMovies }
-                    handleView={this.props.handleView}
+                    handleView={ this.props.handleView }
                  />
             </div>         
         ); 

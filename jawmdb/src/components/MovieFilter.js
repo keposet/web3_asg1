@@ -1,8 +1,9 @@
 import React from 'react';
 import YearFilter from './YearFilter'
+import RatingFilter from './RatingFilter';
 
 class MovieFilter extends React.Component {
-    state = {filterCritiria: {title:"", yearUpper:"", year:"", rating:""} };
+    state = {filterCritiria: { title:"", yearUpper:"", year:"", ratingLower:"", ratingUpper:"" } };
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -20,10 +21,10 @@ class MovieFilter extends React.Component {
         this.setState( { filterCritiria: updatedFilter} );
     }
 
-    handleYearChange = (yearLower, yearUpper) => {
+    handleRadioButtonChange = (lowerBound, upperBound, lowerTitle, upperTitle) => {
         const updatedFilter = {...this.state.filterCritiria};
-        updatedFilter['year'] = yearLower;
-        updatedFilter['yearUpper'] = yearUpper;
+        updatedFilter[lowerTitle] = lowerBound;
+        updatedFilter[upperTitle] = upperBound;
         this.setState( {filterCritiria: updatedFilter} );
     }
 
@@ -36,29 +37,8 @@ class MovieFilter extends React.Component {
                     <label className="label">Title</label>
                     <input className="input" type="text" name="title" onChange={this.handleChange} />
 
-                    <YearFilter handleChange={ this.handleChange } handleYearChange={ this.handleYearChange } />
-                    
-                    <label className="label">Rating</label>
-                    <label> 
-                        <input 
-                            className="input" 
-                            type="radio" 
-                            name="rating" /> 
-                        Below <input type="range" name="volume" min="0" max="10" />
-                    </label> 
-                    <label>
-                        <input className="input" type="radio" name="rating" /> 
-                        Above <input type="range"  name="volume" min="0" max="10" />
-                    </label>
-
-                    <label>
-                        <input className="input" type="radio" name="rating" /> 
-                        Between 
-                        <input type="range" name="volume" min="0" max="10" />
-                        <input type="range" name="volume" min="0" max="10" />
-                    </label>
-
-
+                    <YearFilter handleChange={ this.handleChange } handleYearChange={ this.handleRadioButtonChange } />
+                    <RatingFilter handleChange={ this.handleChange } handleRatingChange={ this.handleRadioButtonChange }/>
 
                     <button>Filter</button>
                     <button type="button" onClick={this.clearFilters}>Clear</button>

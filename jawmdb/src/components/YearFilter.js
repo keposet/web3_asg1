@@ -14,7 +14,7 @@ class YearFilter extends React.Component {
         updatedFilter['yearUpper'] = yearUpperBound;
         updatedFilter[e.target.nextElementSibling.name] = e.target.nextElementSibling.value;  
 
-        this.props.handleYearChange(updatedFilter['year'], updatedFilter['yearUpper']);
+        this.props.handleYearChange(updatedFilter['year'], updatedFilter['yearUpper'], 'year', 'yearUpper');
 
         this.setState({ selected:selected });
     }
