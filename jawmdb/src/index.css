@@ -76,33 +76,9 @@ code {
 
   grid-template-columns: 1fr 1fr 1fr 1fr;
 
-  width: 1000px;
-  height: 750px;
-
-}
-.list h2 {
-  text-align: center;
-  grid-column-start: 1;
-  grid-column-end: 5;
 }
 
-.moviesList {
-  grid-column-start: 1;
-  grid-column-end: 5;
 
-  overflow: scroll;
-}
-
-.list h3 {
-  text-align: right;
-}
-
-.movieItem {
-  display: grid;
-  background: var(--list-box-back);
-  color: var(--header-back);
-  grid-template-columns: 100px 1fr 1fr 1fr 20px 20px;
-}
 
 .label label {
   display: grid;
@@ -111,4 +87,16 @@ code {
 .filterHeading {
   grid-column-start: 1;
   grid-column-end: 4;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.center-align {
+  text-align: center;
+}
+
+.left-align {
+  text-align: left;
 }

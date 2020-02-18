@@ -11,11 +11,11 @@ class MovieItem extends React.Component {
         const url = "https://image.tmdb.org/t/p/w92";
         const [year] = this.props.year.split('-');
         return (
-            <li className='movieItem'>
+            <li className="movie-list-item">
                 <img src={`${url}${this.props.poster}`} alt={this.props.title} />
                 <p>{this.props.title}</p>
-                <p>{year}</p>
-                <p>{this.props.rating}</p>
+                <p className="center-align">{year}</p>
+                <p className="center-align">{this.props.rating}</p>
                 <button>♥</button>
                 <Link to='filminfo'>
                     <button onClick={this.handleView}>View</button>

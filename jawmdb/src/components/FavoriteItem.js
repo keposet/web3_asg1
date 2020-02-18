@@ -5,7 +5,7 @@ const FavoriteItem = function (props) {
         <li className="favorite">
             <img src="" className="later" alt="OMGIWASGETTINGANERRORFROMNOTHAVINGANALTAAAAA"/>
             <button className="closeButton">
-                <i></i>
+                <i>x</i>
             </button>
         </li>       
     ); 
