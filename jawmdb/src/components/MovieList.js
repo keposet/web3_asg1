@@ -1,6 +1,7 @@
 import React from 'react';
 import MovieItem from './MovieItem';
 import './MovieList.css';
+import loading from '../loading.svg'
 
 class MovieList extends React.Component {
     state = { selected:"title", reverse:false };
@@ -24,9 +25,9 @@ class MovieList extends React.Component {
                 <h3 className="movie-title center-align"><button name="title" value="title" onClick={ this.sortValue}>Title</button></h3>
                 <h3 className="center-align"><button name="year" value="year" onClick={ this.sortValue}>Year</button></h3>
                 <h3 className="center-align"><button name="rating" value="rating" onClick={ this.sortValue}>Rating</button></h3>
-                <div className='loading' hidden={ !this.props.loading } >
-                Loading hahaha
-                </div>
+
+                <img className="loading" src={loading} alt="loading" hidden={ !this.props.loading }/>
+
                 <ul className="movies">
                     {this.props.movies.map( (m) => <MovieItem 
                     title={m.title} 
