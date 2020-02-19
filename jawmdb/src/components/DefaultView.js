@@ -154,6 +154,7 @@ class DefaultView extends React.Component {
                     sortYear={ this.sortYear }
                     sortRating={ this.sortRating }
                     sortMovies={ this.sortMovies }
+                    addFav={ this.props.addFav }
                  />
             </div>         
         ); 

@@ -11,13 +11,23 @@ class App extends React.Component {
   constructor(props) {   
     super(props);   
     this.state = { 
-      favorites: [1],
+      favorites: [],
       viewFilmID : ''
     }; 
   }
   viewMovie = (id) => {
     console.log(id);
     this.setState({...this.state,viewFilmID : [id]} )
+  }
+
+  addToFavorites = (favorite) => {
+      let newFavorites = this.state.favorites;
+      if( !newFavorites.find( f => f.id === favorite.id)) {
+        newFavorites.push( { poster:favorite.poster, id:favorite.id, title:favorite.title } );
+        this.setState( { favorites:newFavorites } );
+      }
+      
+      
   }
 
   render() {
@@ -27,8 +37,9 @@ class App extends React.Component {
         <Route path='/showAll' exact 
           render={ (props) =>
             <DefaultView 
-            favorites={this.state.favorites}
-            handleView = {this.viewMovie}
+              favorites={this.state.favorites}
+              handleView = {this.viewMovie}
+              addFav={ this.addToFavorites }
              />
           }
         />

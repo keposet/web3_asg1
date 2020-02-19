@@ -37,6 +37,7 @@ class MovieList extends React.Component {
                     year={m.release_date} 
                     filmID={m.id}
                     handleView={this.props.handleView}
+                    addFav={ this.props.addFav }
                     key={m.id} /> ) }
                 </ul>
             </div>

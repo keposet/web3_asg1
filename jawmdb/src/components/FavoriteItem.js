@@ -1,13 +1,16 @@
 import React from 'react'
 
-const FavoriteItem = function (props) {   
-    return (       
-        <li className="favorite">
-            <img src="" className="later" alt="OMGIWASGETTINGANERRORFROMNOTHAVINGANALTAAAAA"/>
-            <button className="closeButton">
-                <i>x</i>
-            </button>
-        </li>       
-    ); 
+class FavoriteItem extends React.Component {   
+    render() {
+        const url = "https://image.tmdb.org/t/p/w92";
+        return (       
+            <li className="favorite">
+                <img src={`${url}${this.props.poster}`} className="later" alt={ this.props.title }/>
+                <button className="closeButton">
+                    <i>x</i>
+                </button>
+            </li>       
+        ); 
+    }
 } 
 export default FavoriteItem;
