@@ -69,6 +69,12 @@ code {
 .header {
   grid-column: 1 / 4;
 }
+.header-menu {
+  float: right;
+}
+.header-title {
+  float: left;
+}
 
 .filter {
   

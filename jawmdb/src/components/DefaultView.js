@@ -144,7 +144,7 @@ class DefaultView extends React.Component {
         return (       
             <div className="default-view">
                 <Header />
-                < FavoritesList favorites={ this.props.favorites } />
+                < FavoritesList favorites={ this.props.favorites } removeFav={ this.props.removeFav }/>
                 < MovieFilter filter={this.filter} clear={ this.clear} />
                 < MovieList 
                     movies={ this.state.filteredMovies }

@@ -25,9 +25,13 @@ class App extends React.Component {
       if( !newFavorites.find( f => f.id === favorite.id)) {
         newFavorites.push( { poster:favorite.poster, id:favorite.id, title:favorite.title } );
         this.setState( { favorites:newFavorites } );
-      }
-      
-      
+      } 
+  }
+
+  removeFromFavorites = (id) => {
+      let newFavorites = this.state.favorites;
+      newFavorites = newFavorites.filter( fav => fav.id != id);
+      this.setState( { favorites:newFavorites } );
   }
 
   render() {
@@ -40,6 +44,7 @@ class App extends React.Component {
               favorites={this.state.favorites}
               handleView = {this.viewMovie}
               addFav={ this.addToFavorites }
+              removeFav={ this.removeFromFavorites }
              />
           }
         />
