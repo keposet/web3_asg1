@@ -35,6 +35,11 @@
     grid-column: 3 / 3;
     justify-self: center;
   }
+
+  .empty-search {
+    grid-column: 3 / 3;
+    justify-self: center;
+  }
   
   
   

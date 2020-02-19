@@ -19,15 +19,16 @@ class MovieList extends React.Component {
         this.setState( { selected: selected , reverse: !this.state.reverse});
     }
     render() {
+        const display = this.props.movies.length > 0 || this.props.loading;
         return ( 
             <div className="movie-list">
                 <h2 className="list-heading">List/Match</h2>
                 <h3 className="movie-title center-align"><button name="title" value="title" onClick={ this.sortValue}>Title</button></h3>
                 <h3 className="center-align"><button name="year" value="year" onClick={ this.sortValue}>Year</button></h3>
                 <h3 className="center-align"><button name="rating" value="rating" onClick={ this.sortValue}>Rating</button></h3>
-
+                <div className="empty-search" hidden={ display }> Your search found no results</div>
                 <img className="loading" src={loading} alt="loading" hidden={ !this.props.loading }/>
-
+                
                 <ul className="movies">
                     {this.props.movies.map( (m) => <MovieItem 
                     title={m.title} 
