@@ -4,7 +4,7 @@ import FavoriteItem from "./FavoriteItem"
 class FavoritesList extends React.Component {
     render() {
         return (
-            <div>
+            <div className="favorites-bar">
                 <h3> Favorites </h3>
                 <ul className="favorites">
                     {this.props.favorites.map( (fav, ind) => <FavoriteItem key={ind}/>)}

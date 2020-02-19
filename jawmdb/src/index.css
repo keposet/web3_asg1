@@ -58,27 +58,21 @@ code {
 
 .default-view {
   display: grid;
-  grid-template-rows: 1fr 1fr 3fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto 2fr;
+  grid-template-columns: auto minmax(auto, 1fr);
+}
 
-
+.favorites-bar {
+  grid-column: 1 / 4;
 }
 
 .header {
-  grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column: 1 / 4;
 }
 
-.list{
-  display: grid;
-  background: var(--favorites-back);
-  color: var(--header-back);
-
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-
+.filter {
+  
 }
-
-
 
 .label label {
   display: grid;

@@ -1,9 +1,9 @@
 .movie-list {
+    grid-column: 2/3;
     display: grid;
     grid-template-columns: 105px 1fr 1fr 1fr 115px;
     
     overflow: scroll;
-    width: 1000px;
     height: 750px;
   }
   
