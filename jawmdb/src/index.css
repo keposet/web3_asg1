@@ -33,11 +33,6 @@ code {
     monospace;
 }
 
-.movies {
-  display: grid;
-
-}
-
 .favorites {
   display: grid;
   grid-template-columns: repeat(15, 1fr);
@@ -54,6 +49,10 @@ code {
 
   grid-column-start: 1;
   grid-column-end: 4;
+}
+
+.favorites-bar {
+  overflow-y: scroll;
 }
 
 .default-view {
