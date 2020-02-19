@@ -37,7 +37,7 @@ class App extends React.Component {
   render() {
     return (
       <main>
-        <HomeView />        
+        <Route path='/' exact component={HomeView} />       
         <Route path='/showAll' exact 
           render={ (props) =>
             <DefaultView 
