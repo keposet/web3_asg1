@@ -3,15 +3,27 @@ import MovieItem from './MovieItem';
 import './MovieList.css';
 
 class MovieList extends React.Component {
+    state = { selected:"title", reverse:false };
 
+    sortValue = (e) => {
+        let sortOrder = this.props.sortTitle;
+        const selected = e.currentTarget.value;
+        if( selected === "year") {
+            sortOrder = this.props.sortYear;
+        } else if( selected === "rating") {
+            sortOrder = this.props.sortRating;
+        }
+        const reverse = this.state.selected === selected && this.state.reverse;
+        this.props.sortMovies(sortOrder, reverse);
+        this.setState( { selected: selected , reverse: !this.state.reverse});
+    }
     render() {
-        console.log(this.props.movies);
         return ( 
             <div className="movie-list">
                 <h2 className="list-heading">List/Match</h2>
-                <h3 className="movie-title center-align">Title</h3>
-                <h3 className="center-align">Year</h3>
-                <h3 className="center-align">Rating</h3>
+                <h3 className="movie-title center-align"><button name="title" value="title" onClick={ this.sortValue}>Title</button></h3>
+                <h3 className="center-align"><button name="year" value="year" onClick={ this.sortValue}>Year</button></h3>
+                <h3 className="center-align"><button name="rating" value="rating" onClick={ this.sortValue}>Rating</button></h3>
                 <div className='loading' hidden={ !this.props.loading } >
                 Loading hahaha
                 </div>

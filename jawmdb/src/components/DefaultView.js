@@ -5,8 +5,14 @@ import MovieList from './MovieList.js';
 import MovieFilter from './MovieFilter.js';
 
 class DefaultView extends React.Component {   
-
-    state = { loading:true, movies:[], filteredMovies:[] };
+    constructor(props) {
+        super(props)
+        this.state = {
+            loading:true,
+            movies:[], 
+            filteredMovies:[]
+        };
+    }
 
     async componentDidMount() {
         try {
@@ -14,22 +20,55 @@ class DefaultView extends React.Component {
             const response = await fetch(movieUrl);
             const jsonData = await response.json();
 
-            jsonData.sort( function(a,b) {
-                var nameA = a.title.toUpperCase();
-                var nameB = b.title.toUpperCase();
-                if (nameA < nameB) {
-                    return -1;
-                  }
-                if (nameA > nameB) {
-                    return 1;
-                  }
-                return 0
-            } );
+            jsonData.sort( this.sortTitle );
             this.setState( { loading:false, movies: jsonData, filteredMovies: jsonData} );
         }
         catch (error) {
             console.log(error);
         }
+    }
+
+    sortMovies = (sortBy, reverse) => {
+        const sortedMovies = [...this.state.filteredMovies];
+        sortedMovies.sort( sortBy );
+        if ( reverse ) {
+            sortedMovies.reverse();
+        }
+        this.setState( { filteredMovies: sortedMovies });
+    }
+
+    sortTitle(a,b) {
+        var nameA = a.title.toUpperCase();
+        var nameB = b.title.toUpperCase();
+        if (nameA < nameB) {
+            return -1;
+            }
+        if (nameA > nameB) {
+            return 1;
+            }
+        return 0
+    }
+    sortYear(a,b){
+        var yearA = a.release_date;
+        var yearB = b.release_date;
+        if (yearA < yearB) {
+            return -1;
+            }
+        if (yearA > yearB) {
+            return 1;
+            }
+        return 0
+    }
+    sortRating(a,b){
+        var ratingA = a.ratings.average;
+        var ratingB = b.ratings.average;
+        if (ratingA < ratingB) {
+            return -1;
+            }
+        if (ratingA > ratingB) {
+            return 1;
+            }
+        return 0
     }
 
     clear = () => {
@@ -61,7 +100,7 @@ class DefaultView extends React.Component {
 
         const updatedMovies = movies.filter( (movie) => {
                 let [year] = movie.release_date.split('-');
-                return year > lowerBound && year < upperBound 
+                return year > parseInt(lowerBound, 10) && year < parseInt(upperBound, 10) 
             });
         return updatedMovies;
     }
@@ -89,6 +128,10 @@ class DefaultView extends React.Component {
                     movies={ this.state.filteredMovies }
                     handleView={ this.props.handleView }
                     loading={ this.state.loading }
+                    sortTitle={ this.sortTitle }
+                    sortYear={ this.sortYear }
+                    sortRating={ this.sortRating }
+                    sortMovies={ this.sortMovies }
                  />
             </div>         
         ); 
