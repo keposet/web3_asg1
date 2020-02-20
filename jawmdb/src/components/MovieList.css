@@ -1,0 +1,44 @@
+.movie-list {
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: 105px 1fr 1fr 1fr 115px;
+    grid-template-rows: auto 75px 1fr;
+    height: 750px;
+  }
+  
+  .list-heading {
+    grid-column: 1 / span 6;
+    text-align: center;
+  }
+  
+  .movies {
+    padding: 0;
+    margin: 0;
+    grid-column: 1 / span 6;
+
+    overflow: scroll;
+  }
+  
+  .movie-list-item {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr 1fr auto auto;
+    grid-gap: 10px;
+    padding: 5px;
+  }
+  
+  .movie-title {
+    grid-column: 2 / 3;
+  }
+
+  .loading {
+    grid-column: 3 / 3;
+    justify-self: center;
+  }
+
+  .empty-search {
+    grid-column: 3 / 3;
+    justify-self: center;
+  }
+  
+  
+  
