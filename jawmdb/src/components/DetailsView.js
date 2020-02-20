@@ -86,7 +86,7 @@ class DetailsView extends Component {
                             favorites={ this.props.favorites } 
                             removeFav={ this.props.removeFav }
                         />
-                        <Link to='showAll'>
+                        <Link to='defaultview?search='>
                             <button>Return 🔙</button>
                         </Link>
                         <MovieDetail 
