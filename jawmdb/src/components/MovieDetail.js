@@ -11,8 +11,9 @@ class MovieDetail extends Component {
     imdbURL= "https://www.imdb.com/title/";
         
 
-    handleFave= (id) => {
-        this.props.handleFave(id);
+    handleFave= () => {
+        console.log("empty handle fave fucntion in Movie Detail");
+        // this.props.handleFave(this.props.film.id);
     }
 
     render( ) { 
@@ -29,6 +30,7 @@ class MovieDetail extends Component {
                     <img src ={`${this.posterURL}${film.poster}`} />
                     <p>{film.tagline}</p>
                 </div>
+                <button className="favorites-button" onClick={this.handleFave}>❤</button>
                 <div className="Film-Data-Card">
                     <div className="Overview-Stub">
                         <h3>Overview</h3>
@@ -48,11 +50,9 @@ class MovieDetail extends Component {
                     </div>                    
                     <DetailStub title="Companies" data={film.production.companies}/>
                     <DetailStub title="Countries" data={film.production.countries}/>
-                    <DetailStub title="Keywords" data={film.details.keywords}/>
-                    <DetailStub title="Genres" data={film.details.genres}/>
-                </div>
-                
-
+                         <DetailStub title="Keywords" data={film.details.keywords}/>
+                             <DetailStub title="Genres" data={film.details.genres}/>
+                </div>                
             </div>
          );
     }

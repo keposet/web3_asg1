@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 class DetailStub extends Component {
     render() {
         const data = this.props.data; 
-        console.log(data);
         const title = this.props.title
         return ( 
             <div className="Stub">

@@ -4,6 +4,7 @@ import DefaultView from './components/DefaultView';
 import { Route } from 'react-router-dom';
 import HomeView from './components/HomeView';
 import DetailsView from './components/DetailsView';
+require('dotenv').config()
 
 
 

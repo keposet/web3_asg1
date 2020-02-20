@@ -25,7 +25,7 @@ class StarRating extends Component {
            }
     }else{
         for (let i = 0; i < 10; i++) {
-            if (i == xx) {
+            if (i === xx) {
                 ratingArr.push(halfStar);
             } else {
                 let s = (i < xx)? fullStar: emptyStar;
