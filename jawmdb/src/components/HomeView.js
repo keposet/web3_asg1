@@ -26,7 +26,7 @@ class HomeView extends React.Component {
                     <label>Title</label>
                     <input type="text" onChange={ this.handleInput }></input>
                     <p>
-                        <Link to='/defaultview?search=""'>
+                        <Link to='/defaultview?search='>
                             <button>Show all Movies</button>
                         </Link>
                        <Link to={`/defaultview?search=${this.state.search}`} >
