@@ -1,12 +1,27 @@
 import React, { Component } from 'react';
 import StarRating from './StarRating';
 import DetailStub from "./DetailStub";
+import Modal from "react-modal";
 
 class MovieDetail extends Component {
     
+    constructor(props){
+        super(props);
+        this.state={
+            modalIsOpen:false
+        }
+        this.openModal = this.openModal.bind(this);
+        this.afterOpenModal = this.afterOpenModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
+    }
 
     width = "w185";
-    posterURL =`https://image.tmdb.org/t/p/${this.width}/`;
+    modalWidth="w500";
+    baseURL=`https://image.tmdb.org/t/p/`;
+    posterURL =`${this.baseURL}${this.width}/`;
+    modalURL=`${this.baseURL}${this.modalWidth}`;
+
+
     tmdbURL = "https://www.themoviedb.org/movie/";
     imdbURL= "https://www.imdb.com/title/";
         
@@ -14,6 +29,22 @@ class MovieDetail extends Component {
     handleFave= () => {
         console.log("empty handle fave fucntion in Movie Detail");
         // this.props.handleFave(this.props.film.id);
+    }
+
+    posterModal=() => {
+        // render modal?
+    }
+
+    openModal() {
+        this.setState({modalIsOpen: true})
+    }
+
+    afterOpenModal(){
+        //
+    }
+
+    closeModal(){
+        this.setState( { modalIsOpen: false});
     }
 
     render( ) { 
@@ -27,7 +58,9 @@ class MovieDetail extends Component {
             <div className="Film-Detail">
                 <div className="Title-Card">
                     <h2 name="title">{film.title}</h2>
-                    <img src ={`${this.posterURL}${film.poster}`} />
+                    <img src ={`${this.posterURL}${film.poster}`} 
+                    alt={film.title}
+                    onClick={this.openModal}/>
                     <p>{film.tagline}</p>
                 </div>
                 <button className="favorites-button" onClick={this.handleFave}>❤</button>
@@ -52,6 +85,16 @@ class MovieDetail extends Component {
                     <DetailStub title="Countries" data={film.production.countries}/>
                          <DetailStub title="Keywords" data={film.details.keywords}/>
                              <DetailStub title="Genres" data={film.details.genres}/>
+                    <Modal 
+                        isOpen={this.state.modalIsOpen}
+                        onAfterOpen={this.state.afterOpenModal}
+                        onRequestClose={this.state.closeModal}
+                        style="background-color:black;"
+                        contentLabel="Poster Lightbox"
+                    >
+                        <img src={`${this.modalURL}${film.poster}`} alt={`${film.title}lightbox`}/>
+                        <button onClick={this.closeModal}>🔙</button>
+                    </Modal>
                 </div>                
             </div>
          );
