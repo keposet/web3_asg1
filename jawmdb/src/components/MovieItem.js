@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 class MovieItem extends React.Component {
     handleView = () => {
-        // this.props.handleView(this.props.tmdb_id); tph is undefined. but the property is there. 
         this.props.handleView(this.props.filmID);
+
         
     }
     handleFavorite = () => {
@@ -22,7 +22,9 @@ class MovieItem extends React.Component {
                 <p className="center-align">{year}</p>
                 <p className="center-align">{this.props.rating}</p>
                 <button onClick={ this.handleFavorite }>♥</button>
-                <Link to='filminfo'>
+                <Link to='filminfo'
+                    filmID={this.props.filmID}
+                >
                     <button onClick={this.handleView}>View</button>
                 </Link>
                 

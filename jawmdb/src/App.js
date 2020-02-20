@@ -4,6 +4,7 @@ import DefaultView from './components/DefaultView';
 import { Route } from 'react-router-dom';
 import HomeView from './components/HomeView';
 import DetailsView from './components/DetailsView';
+require('dotenv').config()
 
 
 
@@ -16,7 +17,6 @@ class App extends React.Component {
     }; 
   }
   viewMovie = (id) => {
-    console.log(id);
     this.setState({...this.state,viewFilmID : [id]} )
   }
 
@@ -51,6 +51,9 @@ class App extends React.Component {
         />
         <Route path='/filminfo' exact
           render={(props) => <DetailsView 
+            favorites={this.state.favorites}
+            addFav={ this.addToFavorites }
+            removeFav={ this.removeFromFavorites }
             filmID={this.state.viewFilmID}
             />}
           />
