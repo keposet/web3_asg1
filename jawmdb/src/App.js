@@ -51,6 +51,9 @@ class App extends React.Component {
         />
         <Route path='/filminfo' exact
           render={(props) => <DetailsView 
+            favorites={this.state.favorites}
+            addFav={ this.addToFavorites }
+            removeFav={ this.removeFromFavorites }
             filmID={this.state.viewFilmID}
             />}
           />

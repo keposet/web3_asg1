@@ -7,12 +7,15 @@ import { Link } from 'react-router-dom';
 
 class DetailsView extends Component {
 
-    state = {
-        film : {},
-        castMember : {},
-        castID: "",
-        loading : true,
-        filmView : true
+    constructor(props){
+        super(props);
+        this.state={
+            film : {},
+            castMember : {},
+            castID: "",
+            loading : true,
+            filmView : true
+        };
     }
 
     viewCredit = (id) => {
@@ -29,6 +32,7 @@ class DetailsView extends Component {
     async componentDidMount() {
         if (this.state.filmView) {
             try {
+                //loading is being set correctly 
                 const movieURL = `http://www.randyconnolly.com/funwebdev/3rd/api/movie/movies.php?id=${this.props.filmID}`;
                 const resp = await fetch(`${movieURL}`);
                 const data = await resp.json();
@@ -56,7 +60,6 @@ class DetailsView extends Component {
                 }
             } else if (prevState.filmView != this.state.filmView) {
                 try {
-                    console.log("empty CDU trycatch");
                     this.setState({loading:false});
                 } catch (error) {
                     console.log(error);
@@ -69,16 +72,24 @@ class DetailsView extends Component {
     render() { 
         if (this.state.loading) {
             //render loading gif
-            return <div>loading</div>
+            return (
+                <div>loading</div>
+            );
         } else {
             if (this.state.filmView) {
                 return (
                     <div className="Detail-View">
+                        {
+                        // would like to remove the router aspect and just flip states in the app.
+                        }
                         <Link to='showAll'>
                             <button>Return 🔙</button>
                         </Link>
                         <MovieDetail 
                         film={this.state.film}
+                        favorites={this.props.favorites}
+                        addFav={ this.props.addFav }
+                        removeFav={ this.props.removeFav }
                         />
                         <PersonnelList 
                             castList={this.state.film.production.cast} 

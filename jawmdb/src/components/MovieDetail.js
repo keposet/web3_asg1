@@ -26,9 +26,15 @@ class MovieDetail extends Component {
     imdbURL= "https://www.imdb.com/title/";
         
 
-    handleFave= () => {
-        console.log("empty handle fave fucntion in Movie Detail");
-        // this.props.handleFave(this.props.film.id);
+    changeFavorites= () => {
+        console.log(this.props);
+        const id = this.props.film.id;
+        const faves = this.props.favorites;
+        const add = this.props.addFav;
+        console.log(add);
+        const rmv = this.props.removeFav;
+        // (this.props.favorites.find(this.props.film.id))? this.props.removeFav(this.props.film.id):this.props.addFav(this.props.film.id);
+        (faves.find((f)=> f.id === id))? rmv(this.props.film.id):add(this.props.film.id);
     }
 
     posterModal=() => {
@@ -52,7 +58,6 @@ class MovieDetail extends Component {
         let revenue = film.revenue;
         revenue = revenue/1000000;
         revenue = Number.parseFloat(revenue).toPrecision(5);
-        console.log(film);
 
         return ( 
             <div className="Film-Detail">
@@ -63,7 +68,7 @@ class MovieDetail extends Component {
                     onClick={this.openModal}/>
                     <p>{film.tagline}</p>
                 </div>
-                <button className="favorites-button" onClick={this.handleFave}>❤</button>
+                <button className="favorites-button" onClick={this.changeFavorites}>❤</button>
                 <div className="Film-Data-Card">
                     <div className="Overview-Stub">
                         <h3>Overview</h3>
