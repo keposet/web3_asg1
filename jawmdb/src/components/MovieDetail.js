@@ -28,13 +28,11 @@ class MovieDetail extends Component {
 
     changeFavorites= () => {
         console.log(this.props);
-        const id = this.props.film.id;
+        const film = this.props.film;
         const faves = this.props.favorites;
         const add = this.props.addFav;
-        console.log(add);
         const rmv = this.props.removeFav;
-        // (this.props.favorites.find(this.props.film.id))? this.props.removeFav(this.props.film.id):this.props.addFav(this.props.film.id);
-        (faves.find((f)=> f.id === id))? rmv(this.props.film.id):add(this.props.film.id);
+        (!faves.find((f)=> f.id === film.id))? add(film): rmv(film.id);
     }
 
     posterModal=() => {

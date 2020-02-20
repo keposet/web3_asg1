@@ -1,9 +1,10 @@
-import React from 'react';
-import {Component} from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Header from './Header.js';
+import  FavoritesList from './FavoritesList.js';
 import MovieDetail from './MovieDetail';
 import PersonDetail from './PersonDetail';
 import PersonnelList from './PersonnelList';
-import { Link } from 'react-router-dom';
 
 class DetailsView extends Component {
 
@@ -20,55 +21,56 @@ class DetailsView extends Component {
 
     viewCredit = (id) => {
         this.setState({loading: true, castID: id, filmView: false});
-        // this.setState({ castID: id, filmView: false});
     }
 
     viewFilm = () => {
         this.setState({loading: true, filmView: true});
     }
-
-
+    
 //pull the else, add to CDU
     async componentDidMount() {
-        if (this.state.filmView) {
-            try {
-                //loading is being set correctly 
-                const movieURL = `http://www.randyconnolly.com/funwebdev/3rd/api/movie/movies.php?id=${this.props.filmID}`;
-                const resp = await fetch(`${movieURL}`);
-                const data = await resp.json();
-                this.setState({film: {...data}, loading: false});
-                
-            } catch (error) {
-                console.log(error);
-            }    
-        }
+        try {
+            const filmStorageID = localStorage.getItem('filmID');
+            let filmID = JSON.parse(filmStorageID);
+            // filmID added to local storage
+            if (filmID ===null || filmID === "") {
+                localStorage.setItem('filmID', JSON.stringify(this.props.filmID))
+            }
+            // check if props.fid ""
+            if(this.props.filmID !== "" && this.props.filmID !== filmID){
+                console.log('shouldnt be here on f5');
+                console.log(this.props);
+                localStorage.setItem('filmID', JSON.stringify(this.props.filmID))
+                filmID = this.props.filmID;
+            }
+            const movieURL = `http://www.randyconnolly.com/funwebdev/3rd/api/movie/movies.php?id=${filmID}`;
+            const resp = await fetch(`${movieURL}`);
+            const data = await resp.json();
+            this.setState({film: {...data}, loading: false});
+        } catch (error) {
+            console.log(error);
+        }    
     }
 
     async componentDidUpdate(prevProps, prevState) {
-            if (prevState.castID !=this.state.castID) {
-                // ensure castID updates
-                console.log(this.state.castID);
-                try {             
-                    // this should be a node .env
-                    const creditURL = `https://api.themoviedb.org/3/person/${this.state.castID}?api_key=27e7355f9cd5bf46ffa2ad7726d3c494`;
-                    const response = await fetch(creditURL);
-                    const creditData = await response.json();
-                    this.setState({castMember: {...creditData}, loading:false, filmView: false});
-                    console.log(this.state.castMember);
-                } catch (error) {
-                    console.log(error);
-                }
-            } else if (prevState.filmView != this.state.filmView) {
-                try {
-                    this.setState({loading:false});
-                } catch (error) {
-                    console.log(error);
-                }
-                
+        if (prevState.castID !=this.state.castID) {
+            try {             
+                // this should be a node .env
+                const creditURL = `https://api.themoviedb.org/3/person/${this.state.castID}?api_key=27e7355f9cd5bf46ffa2ad7726d3c494`;
+                const response = await fetch(creditURL);
+                const creditData = await response.json();
+                this.setState({castMember: {...creditData}, loading:false, filmView: false});
+            } catch (error) {
+                console.log(error);
             }
+        } else if (prevState.filmView != this.state.filmView || prevState.film != this.state.film) {
+            try {
+                this.setState({loading:false});
+            } catch (error) {
+                console.log(error);
+            }   
+        }
     }
-
-
     render() { 
         if (this.state.loading) {
             //render loading gif
@@ -79,9 +81,11 @@ class DetailsView extends Component {
             if (this.state.filmView) {
                 return (
                     <div className="Detail-View">
-                        {
-                        // would like to remove the router aspect and just flip states in the app.
-                        }
+                         <Header />
+                        < FavoritesList 
+                            favorites={ this.props.favorites } 
+                            removeFav={ this.props.removeFav }
+                        />
                         <Link to='showAll'>
                             <button>Return 🔙</button>
                         </Link>
@@ -100,6 +104,11 @@ class DetailsView extends Component {
             }else {
                 return (
                     <div className="Detail-View">
+                        <Header />
+                        < FavoritesList 
+                            favorites={ this.props.favorites } 
+                            removeFav={ this.props.removeFav }
+                        />
                         <PersonDetail 
                             name={this.state.castMember.name}
                             image={this.state.castMember.profile_path}
