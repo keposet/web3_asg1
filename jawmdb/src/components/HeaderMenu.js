@@ -37,7 +37,7 @@ class HeaderMenu extends React.Component {
                     style=""
                     contentLabel="Example Modal"
                 >
-                    <h2 >Hello</h2>
+                    <h2 >Web Assignment 1</h2>
                     <About />
                     <button onClick={this.closeModal}>close</button>
                     
