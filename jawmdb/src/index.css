@@ -1,12 +1,3 @@
-/* purple + orange + blues
- :root {
-  --list-back: #bccbde;
-  --details-back: #e6e9f0;
-  --header-back: #431c5d;
-  --button-back: #e05915;
-  --border-color: #c2dde6;
-  --box-back: white;
-} */
 
 :root {
   --list-back: #2b7a78;
@@ -31,6 +22,21 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.home-view{
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.home-view div h1 {
+  font-size: 2rem;
+  text-shadow: 2px 2px black;
+}
+
+.home-view div {
+  display: inline-block;
+  margin-top: 200px;
 }
 
 .favorites {

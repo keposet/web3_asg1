@@ -3,6 +3,7 @@ import Header from './Header.js';
 import  FavoritesList from './FavoritesList.js';
 import MovieList from './MovieList.js';
 import MovieFilter from './MovieFilter.js';
+import { useLocation } from 'react-router-dom';
 
 class DefaultView extends React.Component {   
     constructor(props) {
@@ -13,9 +14,12 @@ class DefaultView extends React.Component {
             filteredMovies:[]
         };
     }
-
+    
     async componentDidMount() {
         try {
+            //Check for query string
+            let [,search] = this.props.location.search.split("=");
+            
             //Check if the movies have been stored in local.
             const movieObj = localStorage.getItem('movies');
             let movies = JSON.parse(movieObj);
@@ -30,8 +34,9 @@ class DefaultView extends React.Component {
             }
 
             //Sort the movies the movies before displaying them.
-            movies.sort( this.sortTitle );
-            this.setState( { loading:false, movies: movies, filteredMovies: movies} );
+            let filteredMovies = this.filterByTitle(movies, search);
+            filteredMovies.sort( this.sortTitle );
+            this.setState( { loading:false, movies: movies, filteredMovies: filteredMovies} );
         }
         catch (error) {
             console.log(error);
@@ -161,4 +166,6 @@ class DefaultView extends React.Component {
     }
 
 } 
+
+
 export default DefaultView;

@@ -38,9 +38,10 @@ class App extends React.Component {
     return (
       <main>
         <Route path='/' exact component={HomeView} />       
-        <Route path='/showAll' exact 
+        <Route path='/defaultview' exact 
           render={ (props) =>
             <DefaultView 
+            {...props}
               favorites={this.state.favorites}
               handleView = {this.viewMovie}
               addFav={ this.addToFavorites }
