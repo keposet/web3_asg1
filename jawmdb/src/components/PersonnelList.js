@@ -40,7 +40,7 @@ class PersonnelList extends Component {
             return (
                 <div className="Person-List">
                     <button onClick={this.switchView}>View Cast</button>
-                    {this.props.crewList.map((c,i)=>
+                    {crewList.map((c,i)=>
                     <CrewItem 
                         department={c.department}
                         job={c.job}
