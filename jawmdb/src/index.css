@@ -70,8 +70,15 @@ code {
 .favorite {
   position: relative;
   justify-self: end;
-  
 }
+.favorite > button {
+  opacity: 50%;
+}
+
+.favorite:hover button {
+  opacity: 100%;
+}
+
 .closeButton {
   position: absolute;
   top: 0;
