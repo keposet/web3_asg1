@@ -8,6 +8,13 @@
   --button-back: #3aafa9;
   --border-color: #c2dde6;
   --list-box-back: #feffff;
+
+
+  --header-background: #4489C6;
+  --main-color: #2F5270;
+  --splash: #FF704B;
+  --splash-dim: #AE5842;
+
 }
 
 body {
@@ -97,18 +104,30 @@ code {
 
 .header {
   grid-column: 1 / 4;
+  background-color: var(--header-background);
 }
 .header-menu {
   float: right;
+  
 }
 .header-title {
   float: left;
 }
 
-.filter {
+.header-menu button {
+  background-color: var(--splash);
+  border-radius: 2px;
+  text-emphasis: bold;
+  margin: 2em;
+  padding: 5px;
+  border: none;
   
 }
 
+.header-menu button:hover {
+  background-color: var(--splash-dim);
+
+}
 .label label {
   display: grid;
   grid-template-columns: auto 1fr 1fr auto;

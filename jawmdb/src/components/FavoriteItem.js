@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 class FavoriteItem extends React.Component {   
     handleRemove = () => {
         const removeId = this.props.id;
@@ -9,7 +9,7 @@ class FavoriteItem extends React.Component {
         const url = "https://image.tmdb.org/t/p/w92";
         return (       
             <li className="favorite">
-                <img src={`${url}${this.props.poster}`} className="later" alt={ this.props.title }/>
+                <Link to={`/filmInfo?=${this.props.title}`} ><img src={`${url}${this.props.poster}`} className="later" alt={ this.props.title }/></Link>
                 <button className="closeButton" onClick={ this.handleRemove }>
                     <i > x </i>
                 </button>
