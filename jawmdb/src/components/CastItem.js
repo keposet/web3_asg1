@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 
 class CastItem extends Component {
-    constructor(props) {
-        super(props);
-    }
+
     viewCredit = () => {
         this.props.viewCredit(this.props.id);
     }

@@ -27,6 +27,8 @@ code {
   color: white;
   font-weight: bold;
   text-align: center;
+  min-height: 100vh;
+  position: relative;
 }
 
 .home-view div h1 {
@@ -34,11 +36,21 @@ code {
   text-shadow: 2px 2px black;
 }
 
-.home-view div {
+
+.home-view p{
+  position: fixed;
+  width: 100%;
+  bottom: 0%;
+  margin: 20px;
+}
+
+.movie-browser {
+  background-color: cadetblue;
+  padding: 10px;
+  border-radius: 10px;
   display: inline-block;
   margin-top: 200px;
 }
-
 .favorites {
   display: grid;
   grid-template-columns: repeat(15, 1fr);

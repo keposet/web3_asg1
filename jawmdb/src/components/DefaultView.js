@@ -3,7 +3,6 @@ import Header from './Header.js';
 import  FavoritesList from './FavoritesList.js';
 import MovieList from './MovieList.js';
 import MovieFilter from './MovieFilter.js';
-import { useLocation } from 'react-router-dom';
 
 class DefaultView extends React.Component {   
     constructor(props) {

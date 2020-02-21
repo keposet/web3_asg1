@@ -92,7 +92,8 @@ class MovieDetail extends Component {
                         isOpen={this.state.modalIsOpen}
                         onAfterOpen={this.state.afterOpenModal}
                         onRequestClose={this.state.closeModal}
-                        style="background-color:black;"
+                        //This takes an object, easier to style in css style={"background-color:black;"}
+                        ariaHideApp={false}
                         contentLabel="Poster Lightbox"
                     >
                         <img src={`${this.modalURL}${film.poster}`} alt={`${film.title}lightbox`}/>

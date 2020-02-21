@@ -4,6 +4,7 @@ import DefaultView from './components/DefaultView';
 import { Route } from 'react-router-dom';
 import HomeView from './components/HomeView';
 import DetailsView from './components/DetailsView';
+import {CSSTransition} from 'react-transition-group';
 require('dotenv').config()
 
 
@@ -13,7 +14,7 @@ class App extends React.Component {
     super(props);   
     this.state = { 
       favorites: [],
-      viewFilmID : ''
+      viewFilmID: ''
     }; 
   }
   viewMovie = (id) => {
@@ -37,16 +38,19 @@ class App extends React.Component {
   render() {
     return (
       <main>
-        <Route path='/' exact component={HomeView} />       
+        <Route path='/' exact component={HomeView} />   
+
+           
         <Route path='/defaultview' exact 
           render={ (props) =>
+
             <DefaultView 
-            {...props}
-              favorites={this.state.favorites}
-              handleView = {this.viewMovie}
-              addFav={ this.addToFavorites }
-              removeFav={ this.removeFromFavorites }
-             />
+                {...props}
+                  favorites={this.state.favorites}
+                  handleView = {this.viewMovie}
+                  addFav={ this.addToFavorites }
+                  removeFav={ this.removeFromFavorites }
+                />
           }
         />
         <Route path='/filminfo' exact

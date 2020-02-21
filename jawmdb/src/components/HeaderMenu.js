@@ -34,6 +34,7 @@ class HeaderMenu extends React.Component {
                     isOpen={this.state.modalIsOpen}
                     onAfterOpen={this.afterOpenModal}
                     onRequestClose={this.closeModal}
+                    ariaHideApp={false}
                     contentLabel="Example Modal"
                 >
                     <h2 >Web Assignment 1</h2>

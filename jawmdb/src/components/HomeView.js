@@ -16,23 +16,23 @@ class HomeView extends React.Component {
             <div className="home-view"
                 style={{
                     backgroundImage: `url(${imgUrl})`,
-                    height: '800px',
+                    height: '100%',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center center',
                     backgroundRepeat: 'no-repeat',
                 }}>
-                <div>
+                <div className="movie-browser">
                     <h1>Movie Browser</h1>
                     <label>Title</label>
                     <input type="text" onChange={ this.handleInput }></input>
-                    <p>
+                    <div>
                         <Link to='/defaultview?search='>
                             <button>Show all Movies</button>
                         </Link>
                        <Link to={`/defaultview?search=${this.state.search}`} >
                             <button >Search Movies</button>
                         </Link>                        
-                    </p>
+                    </div>
                    
                 </div>
                 <p>Image Credit to: Denise Jans @dmjdenise from unsplash</p>
