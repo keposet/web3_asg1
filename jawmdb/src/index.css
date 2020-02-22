@@ -60,6 +60,7 @@ code {
   display: inline-block;
   margin-top: 200px;
 }
+
 .favorites {
   display: grid;
   grid-template-columns: repeat(15, 1fr);
@@ -92,8 +93,13 @@ code {
   right: 0;
 }
 .favorites-bar {
+  display: inline-flex;
   overflow-y: scroll;
   grid-column: 1 / 4;
+}
+
+.favorites-bar h3{
+  margin: 1em;
 }
 
 .default-view {
