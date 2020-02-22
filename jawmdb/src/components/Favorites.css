@@ -20,18 +20,25 @@
     justify-self: end;
   }
   .favorite > button {
-    opacity: 50%;
+    opacity: 0%;
   }
   
   .favorite:hover button {
-    opacity: 100%;
+    opacity: 80%;
   }
   
   .closeButton {
     position: absolute;
     top: 0;
     right: 0;
+    background-color: grey;
+    border: none;
+    outline: none;
+    height: 25%;
+    cursor: pointer;
   }
+  
+
   .favorites-bar {
     display: inline-flex;
     overflow-y: scroll;
@@ -42,20 +49,13 @@
     margin: 1em;
   }
 
-  .favorites-bar button {
-      background-color: white;
-  }
-
   .display-enter {
     opacity: 0;
     
    }
   .display-enter-active {
     opacity: 1;
-    
     transition: opacity 500ms ease-in;
-    
-  
   }
   
   .display-enter img{

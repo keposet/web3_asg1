@@ -1,5 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faTrashAlt} from "@fortawesome/free-solid-svg-icons";
 class FavoriteItem extends React.Component {   
     handleRemove = () => {
         const removeId = this.props.id;
@@ -11,7 +13,7 @@ class FavoriteItem extends React.Component {
             <li className="favorite">
                 <Link to={`/filmInfo?=${this.props.title}`} ><img src={`${url}${this.props.poster}`} className="later" alt={ this.props.title }/></Link>
                 <button className="closeButton" onClick={ this.handleRemove }>
-                    <i > x </i>
+                    <FontAwesomeIcon icon={ faTrashAlt }/>
                 </button>
             </li>       
         ); 
