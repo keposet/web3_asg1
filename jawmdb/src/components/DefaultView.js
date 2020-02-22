@@ -92,6 +92,7 @@ class DefaultView extends React.Component {
     //Function used by MovieFilter to clear all filters and display all movies
     clear = () => {
         const filtered = this.filterByTitle(this.state.movies, "");
+        filtered.sort( this.sortTitle );
         this.setState( { filteredMovies: filtered } );
     }
 
@@ -101,6 +102,7 @@ class DefaultView extends React.Component {
         let filtered = this.filterByTitle(this.state.movies, filterList.title);
         filtered = this.filterByYear(filtered, filterList.year, filterList.yearUpper);
         filtered = this.filterByRating(filtered, filterList.ratingLower, filterList.ratingUpper);
+        filtered.sort( this.sortTitle );
         this.setState( {filteredMovies: filtered } );
     }
 

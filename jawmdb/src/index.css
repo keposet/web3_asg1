@@ -14,19 +14,6 @@
   --main-color: #2F5270;
   --splash: #FF704B;
   --splash-dim: #AE5842;
-
-  --toggler-width: 120px;
-  --toggler-height: 40px;
-  --toggler-bg-color: #da110a;
-  --toggler-active-bg-color: #08853c;
-  --menu-starting-top: 0px;
-  --menu-ending-top: 45px;
-  --menu-width: 200px;
-  --menu-max-height: 200px;
-  --menu-bg-color: #188ddb;
-  --fade-from-color: transparent;
-  --fade-to-color: black;
-  --timeout: 350ms;
 }
 
 body {
@@ -113,10 +100,6 @@ code {
 .label label {
   display: grid;
   grid-template-columns: auto 1fr 1fr auto;
-}
-.filterHeading {
-  grid-column-start: 1;
-  grid-column-end: 4;
 }
 
 .right-align {

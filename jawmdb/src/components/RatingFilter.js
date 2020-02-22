@@ -19,6 +19,12 @@ class RatingFilter extends React.Component {
         this.setState({ selected:selected });
     }
 
+    handleRatingsChange = (e) => {
+        let ratingVal = e.currentTarget.nextElementSibling;
+        ratingVal.textContent = e.currentTarget.value;
+        this.props.handleChange(e);
+    }
+
     render() {
         return(
             <label className="label">Rating
@@ -30,7 +36,7 @@ class RatingFilter extends React.Component {
                         checked={this.state.selected === "BELOW"} 
                         onChange={this.handleRadioChange} 
                     /> 
-                    Below <input type="range" name="ratingUpper" min="0" max="10" onChange={ this.props.handleChange } disabled={this.state.selected !== "BELOW"} />
+                    Below <input type="range" name="ratingUpper" min="0" max="10" onChange={ this.handleRatingsChange } disabled={this.state.selected !== "BELOW"} /> <p>10</p>
                 </label> 
                 <label>
                     <input 
@@ -40,7 +46,7 @@ class RatingFilter extends React.Component {
                         checked={this.state.selected === "ABOVE"} 
                         onChange={this.handleRadioChange}
                     /> 
-                    Above <input type="range"  name="ratingLower" min="0" max="10" onChange={ this.props.handleChange } disabled={this.state.selected !== "ABOVE"} />
+                    Above <input type="range"  name="ratingLower" min="0" max="10" onChange={ this.handleRatingsChange } disabled={this.state.selected !== "ABOVE"} /> <p>10</p>
                 </label>
 
                 <label>
@@ -52,8 +58,8 @@ class RatingFilter extends React.Component {
                         onChange={this.handleRadioChange}
                     /> 
                     Between 
-                    <input type="range" name="ratingLower" min="0" max="10" onChange={ this.props.handleChange } disabled={this.state.selected !== "BETWEEN"} />
-                    <input className="between" type="range" name="ratingUpper" min="0" max="10" onChange={ this.props.handleChange } disabled={this.state.selected !== "BETWEEN"} />
+                    <input type="range" name="ratingLower" min="0" max="10"  onChange={ this.handleRatingsChange } disabled={this.state.selected !== "BETWEEN"} /> <p>10</p>
+                    <input className="between" type="range" name="ratingUpper" min="0" max="10"  onChange={ this.handleRatingsChange } disabled={this.state.selected !== "BETWEEN"} /> <p>10</p>
                 </label>
             </label>
         );

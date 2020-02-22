@@ -1,14 +1,23 @@
 import React from 'react';
 import YearFilter from './YearFilter'
 import RatingFilter from './RatingFilter';
+import { CSSTransition } from 'react-transition-group';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
+import './Filter.css'
 
 class MovieFilter extends React.Component {
-    state = {filterCritiria: { title:"", yearUpper:"", year:"", ratingLower:"", ratingUpper:"" } };
+    state = {filterCritiria: { title:"", yearUpper:"", year:"", ratingLower:"", ratingUpper:"" }, hidden: false};
 
     handleSubmit = (e) => {
         e.preventDefault();
         console.log(this.state.filterCritiria);
         this.props.filter(this.state.filterCritiria);
+    }
+    hidePanel = () =>{
+        const newHidden = !this.state.hidden;
+        this.setState( { hidden: newHidden } );
     }
 
     clearFilters = (e) => {
@@ -29,9 +38,16 @@ class MovieFilter extends React.Component {
     }
 
     render() {
-
+        const arrow = (this.state.hidden) ? (<FontAwesomeIcon icon={faAngleDoubleRight}/>) : (<FontAwesomeIcon icon={faAngleDoubleLeft}/>);
         return(
             <form className="filter" onSubmit={this.handleSubmit} >
+                <CSSTransition
+                        in={!this.state.hidden}
+                        timeout={350}
+                        classNames="hide"
+                        unmountOnExit
+                        appear
+                    > 
                 <fieldset id="box">
                     <legend>Movie Filter</legend>
                     <label className="label">Title</label>
@@ -42,9 +58,10 @@ class MovieFilter extends React.Component {
 
                     <button>Filter</button>
                     <button type="button" onClick={this.clearFilters}>Clear</button>
-                    <button type="button" onClick={this.hidePanel}>Hide</button>
 
                 </fieldset>
+                </CSSTransition>
+        <button type="button" onClick={this.hidePanel}>{arrow}</button>
             </form>
         );
     }

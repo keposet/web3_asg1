@@ -49,15 +49,7 @@
     margin: 1em;
   }
 
-  .display-enter {
-    opacity: 0;
-    
-   }
-  .display-enter-active {
-    opacity: 1;
-    transition: opacity 500ms ease-in;
-  }
-  
+
   .display-enter img{
     opacity: 0;
     height: 0px;
@@ -65,8 +57,7 @@
   .display-enter-active img {
     opacity: 1;
     height: 138px;
-    transition: opacity 500ms ease-in;
-    transition: height 500ms ease-in;
+    transition: all 500ms ease-in;
   
   }
 
@@ -77,20 +68,10 @@
   .display-exit-active img {
     opacity: 0;
     height: 0px;
-    transition: opacity 500ms ease-in;
-    transition: height 500ms ease-in;
+    transition: all 500ms ease-in;
+
   
   }
 
   
-  .display-exit {
-    opacity: 1;
-    height: 100px;
-  }
   
-  .display-exit-active {
-    opacity: 0;
-    height: 0px;
-    transition: opacity 500ms ease-out;
-    transition: height 500ms ease-out;
-  }
