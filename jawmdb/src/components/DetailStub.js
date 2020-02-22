@@ -8,7 +8,7 @@ class DetailStub extends Component {
             <div className="Stub">
                 <h3>{title}</h3>
                 <ul>
-                    {data.map(d => <li key={d.name}>{d.name}</li>)}
+                    {data.map(d => <li className="stub-info" key={d.name}>{d.name}</li>)}
                 </ul>
             </div>
          );

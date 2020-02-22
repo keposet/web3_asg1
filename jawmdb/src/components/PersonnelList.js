@@ -20,8 +20,9 @@ class PersonnelList extends Component {
         if (this.state.viewIsCast == true && this.props.castList !== null) {
             const castList = this.props.castList.sort((a,b)=> (a.order <b.order)? -1: 1);
             return(
-                <div className="Person-List">
+                <div className="Cast-List">
                     <button onClick={this.switchView}>View Crew</button>
+                    <div className="Person-List">
                     {castList.map( (c,i)=> 
                     <CastItem 
                         character={c.character} 
@@ -31,6 +32,7 @@ class PersonnelList extends Component {
                         key={i} 
                         index={i} />
                     )}
+                    </div>
                 </div>
                 );
         }else{        
@@ -38,8 +40,9 @@ class PersonnelList extends Component {
             crewList = crewList.sort((a,b)=> (a.department === b.department && a.name < b.name)? -1:1);
             
             return (
-                <div className="Person-List">
+                <div className="Crew-List">
                     <button onClick={this.switchView}>View Cast</button>
+                    <div className="Person-List">
                     {crewList.map((c,i)=>
                     <CrewItem 
                         department={c.department}
@@ -48,7 +51,8 @@ class PersonnelList extends Component {
                         key={i}
                         index={i}
                     />
-                )}
+                    )}
+                    </div>
                 </div>
             );
         }

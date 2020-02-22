@@ -8,8 +8,8 @@ class CastItem extends Component {
     render() { 
         return ( 
             <div className="Cast-Item">
-                <div className="Character-Name">{this.props.character}</div>
-                <div className="Credit-Name">{this.props.name}</div>
+                <p className="Character-Name">{this.props.character} &nbsp;</p>
+                <p className="Credit-Name">{this.props.name}</p>
                 <button className="Credit-button" onClick={this.viewCredit}>View🔭</button>
             </div>
          );

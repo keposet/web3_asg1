@@ -5,9 +5,9 @@ class CrewItem extends Component {
     render(){
         return (
             <div className="Crew-Item">
-                <div className="Department-Item">{this.props.department}</div>
-                <div className="Job-Item">{this.props.job}</div>
-                <div className="Crew-Name-Item">{this.props.name}</div>
+                <p className="Department-Item">{this.props.department} &nbsp;</p>
+                <p className="Job-Item">{this.props.job} &nbsp;</p>
+                <p className="Crew-Name-Item">{this.props.name}</p>
             </div>
         );
     }

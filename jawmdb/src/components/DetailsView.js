@@ -5,7 +5,7 @@ import  FavoritesList from './FavoritesList.js';
 import MovieDetail from './MovieDetail';
 import PersonDetail from './PersonDetail';
 import PersonnelList from './PersonnelList';
-
+import './DetailsView.css';
 class DetailsView extends Component {
 
     constructor(props){
@@ -86,9 +86,7 @@ class DetailsView extends Component {
                             favorites={ this.props.favorites } 
                             removeFav={ this.props.removeFav }
                         />
-                        <Link to='defaultview?search='>
-                            <button>Return 🔙</button>
-                        </Link>
+                        
                         <MovieDetail 
                         film={this.state.film}
                         favorites={this.props.favorites}
@@ -99,6 +97,9 @@ class DetailsView extends Component {
                             castList={this.state.film.production.cast} 
                             crewList={this.state.film.production.crew} 
                             viewCredit={this.viewCredit}/>
+                        <Link to='defaultview?search='>
+                            <button>Return 🔙</button>
+                        </Link>
                     </div>
                 );
             }else {
