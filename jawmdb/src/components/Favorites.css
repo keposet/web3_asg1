@@ -1,0 +1,96 @@
+.favorites-bar{
+    background: var(--favorites-back);
+  }
+  .favorites {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-auto-flow: column;
+  
+    align-items: center;
+    grid-gap: 10px;
+    
+    color: var(--header-back);
+  
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+  
+  .favorite {
+    position: relative;
+    justify-self: end;
+  }
+  .favorite > button {
+    opacity: 50%;
+  }
+  
+  .favorite:hover button {
+    opacity: 100%;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .favorites-bar {
+    display: inline-flex;
+    overflow-y: scroll;
+    grid-column: 1 / 4;
+  }
+  
+  .favorites-bar h3, .favorites-bar div{
+    margin: 1em;
+  }
+
+  .favorites-bar button {
+      background-color: white;
+  }
+
+  .display-enter {
+    opacity: 0;
+    
+   }
+  .display-enter-active {
+    opacity: 1;
+    
+    transition: opacity 500ms ease-in;
+    
+  
+  }
+  
+  .display-enter img{
+    opacity: 0;
+    height: 0px;
+   }
+  .display-enter-active img {
+    opacity: 1;
+    height: 138px;
+    transition: opacity 500ms ease-in;
+    transition: height 500ms ease-in;
+  
+  }
+
+  .display-exit img{
+    opacity: 1;
+    height: 130px;
+   }
+  .display-exit-active img {
+    opacity: 0;
+    height: 0px;
+    transition: opacity 500ms ease-in;
+    transition: height 500ms ease-in;
+  
+  }
+
+  
+  .display-exit {
+    opacity: 1;
+    height: 100px;
+  }
+  
+  .display-exit-active {
+    opacity: 0;
+    height: 0px;
+    transition: opacity 500ms ease-out;
+    transition: height 500ms ease-out;
+  }

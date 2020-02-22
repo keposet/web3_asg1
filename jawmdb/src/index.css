@@ -15,6 +15,18 @@
   --splash: #FF704B;
   --splash-dim: #AE5842;
 
+  --toggler-width: 120px;
+  --toggler-height: 40px;
+  --toggler-bg-color: #da110a;
+  --toggler-active-bg-color: #08853c;
+  --menu-starting-top: 0px;
+  --menu-ending-top: 45px;
+  --menu-width: 200px;
+  --menu-max-height: 200px;
+  --menu-bg-color: #188ddb;
+  --fade-from-color: transparent;
+  --fade-to-color: black;
+  --timeout: 350ms;
 }
 
 body {
@@ -53,6 +65,10 @@ code {
   margin: 20px;
 }
 
+.Detail-View {
+  display: grid;
+}
+
 .movie-browser {
   background-color: cadetblue;
   padding: 25px;
@@ -61,46 +77,6 @@ code {
   margin-top: 200px;
 }
 
-.favorites {
-  display: grid;
-  grid-template-columns: repeat(15, 1fr);
-  grid-auto-flow: column;
-
-  align-items: center;
-  grid-gap: 10px;
-  background: var(--favorites-back);
-  color: var(--header-back);
-
-  font-size: 0.8em;
-  font-weight: bold;
-}
-
-.favorite {
-  position: relative;
-  justify-self: end;
-}
-.favorite > button {
-  opacity: 50%;
-}
-
-.favorite:hover button {
-  opacity: 100%;
-}
-
-.closeButton {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-.favorites-bar {
-  display: inline-flex;
-  overflow-y: scroll;
-  grid-column: 1 / 4;
-}
-
-.favorites-bar h3{
-  margin: 1em;
-}
 
 .default-view {
   display: grid;
@@ -159,3 +135,9 @@ code {
   height: 100px;
   min-height: 10px;
 }
+
+
+
+
+
+
