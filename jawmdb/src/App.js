@@ -38,7 +38,18 @@ class App extends React.Component {
   render() {
     return (
       <main>
-        <Route path='/' exact component={HomeView} />   
+        <Route path='/' key='/' exact  >
+          { ({match}) => (
+              <CSSTransition
+                  in={match != null}
+                  timeout={750}
+                  classNames="home-page"
+                  unmountOnExit
+              >
+                <HomeView />
+              </CSSTransition>
+          )}
+        </Route>   
 
            
         <Route path='/defaultview' exact 

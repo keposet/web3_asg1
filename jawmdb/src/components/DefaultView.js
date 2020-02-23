@@ -147,6 +147,7 @@ class DefaultView extends React.Component {
 
 
     render() {
+        
         return (       
             <div className="default-view">
                 <Header />
@@ -162,6 +163,7 @@ class DefaultView extends React.Component {
                     sortMovies={ this.sortMovies }
                     addFav={ this.props.addFav }
                  />
+               
             </div>         
         ); 
     }
