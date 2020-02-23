@@ -50,7 +50,9 @@
   .favorites-bar h3, .favorites-bar div{
     margin: 1em;
   }
-
+  .favorites-bar div{
+    cursor: pointer;
+  }
 
   .display-enter img{
     opacity: 0;

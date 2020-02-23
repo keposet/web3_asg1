@@ -62,6 +62,24 @@ legend{
 input[type=number]{
     appearance: textfield;
 }
+input[type=range]{
+    width: 50%;
+    background-color: transparent;
+    cursor: grab;
+}
+
+input[type=range]:active{
+    width: 50%;
+    background-color: transparent;
+    cursor: grabbing;
+}
+
+
+input[type=range]:disabled{
+    width: 50%;
+    background-color: transparent;
+    cursor: not-allowed;
+}
 
 input{
     margin-left: 2em;
