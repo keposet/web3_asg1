@@ -180,4 +180,11 @@ button:hover{
 }
 
 
+.modal-dialog {
+  background-color: var(--accent-dark);
+  padding: 2em;
+  margin: 2em;
+  border: 2px solid var(--accent-light);
+  border-radius: 10px;
+}
 

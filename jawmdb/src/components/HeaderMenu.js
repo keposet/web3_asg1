@@ -1,6 +1,7 @@
 import React from 'react'; 
 import Modal from 'react-modal'
 import About from './About'
+
 class HeaderMenu extends React.Component {   
     constructor(props) {
         super(props);
@@ -35,6 +36,7 @@ class HeaderMenu extends React.Component {
                     onAfterOpen={this.afterOpenModal}
                     onRequestClose={this.closeModal}
                     ariaHideApp={false}
+                    className='modal-dialog'
                     contentLabel="Example Modal"
                 >
                     <h2 >Web Assignment 1</h2>
