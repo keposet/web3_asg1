@@ -61,11 +61,11 @@ class MovieFilter extends React.Component {
                     <RatingFilter handleChange={ this.handleChange } handleRatingChange={ this.handleRadioButtonChange }/>
 
                     <button>Filter</button>
-                    <button type="button" onClick={this.clearFilters}>Clear</button>
+                    <button className="clear-btn" type="button" onClick={this.clearFilters}>Clear</button>
 
                 </fieldset>
                 </CSSTransition>
-        <button type="button" onClick={this.hidePanel}>{arrow}</button>
+            <button type="button" onClick={this.hidePanel}>{arrow}</button>
             </form>
         );
     }

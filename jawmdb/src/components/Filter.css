@@ -14,7 +14,18 @@
     transition: all 300ms ease;
 }
 
-
+legend{
+    font-size: 2em;
+    font-weight: bold;
+    background-color: var(--accent-dark);
+    border-top: 2px solid var(--accent-light);
+    border-left: 2px solid var(--accent-light);
+    border-right: 2px solid var(--accent-light);
+    border-radius: 3px;
+    margin: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 .hide-exit {
     opacity: 1;
     width: 100%;
@@ -30,6 +41,7 @@
 .filter-label  {
     display: grid;
     grid-template-columns: repeat(4, auto);
+    
 }
 .filter-label label {
     line-height: 2em;
@@ -42,7 +54,9 @@
 
 #box{
     min-width: 0;
-    max-width: 500px;
+    max-width: 450px;
+    background-color: var(--accent-dark);
+    border:2px solid var(--accent-light);
 }
 
 input[type=number]{
@@ -57,5 +71,5 @@ input{
     float: right;
     margin-right: 10px;
     line-height: 100%;
-    text-align: center;
 }
+

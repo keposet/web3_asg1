@@ -1,5 +1,7 @@
 .favorites-bar{
-    background: var(--favorites-back);
+    background: var(--accent-dark);
+    border-color: var(--accent-light);
+    border: thick;
   }
   .favorites {
     display: grid;
