@@ -1,6 +1,8 @@
 import React from 'react'; 
-import Modal from 'react-modal'
-import About from './About'
+import Modal from 'react-modal';
+import About from './About';
+import style from '../styles/header.module.css';
+
 class HeaderMenu extends React.Component {   
     constructor(props) {
         super(props);
@@ -27,7 +29,7 @@ class HeaderMenu extends React.Component {
 
     render() {
         return (       
-            <nav className="header-menu">           
+            <nav className={style.headerMenu}>           
                 <button onClick={this.openModal}>About</button>   
 
                 <Modal

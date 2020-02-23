@@ -51,46 +51,11 @@ code {
   display: inline-block;
   margin-top: 200px;
 }
-.favorites {
-  display: grid;
-  grid-template-columns: repeat(15, 1fr);
-  grid-auto-flow: column;
-
-  align-items: center;
-  grid-gap: 5px;
-  background: var(--favorites-back);
-  color: var(--header-back);
-  padding: 5px;
-  font-size: 0.8em;
-  font-weight: bold;
-  text-transform: uppercase;
-
-  grid-column-start: 1;
-  grid-column-end: 4;
-}
-
-.favorites-bar {
-  overflow-y: scroll;
-}
 
 .default-view {
   display: grid;
   grid-template-rows: auto auto 2fr;
   grid-template-columns: auto minmax(auto, 1fr);
-}
-
-.favorites-bar {
-  grid-column: 1 / 4;
-}
-
-.header {
-  grid-column: 1 / 4;
-}
-.header-menu {
-  float: right;
-}
-.header-title {
-  float: left;
 }
 
 .filter {

@@ -1,0 +1,11 @@
+.list{
+    grid-area: list;
+    /* 'outside' of grid but smaller  width: 30%; */
+}
+
+.viewBtn{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}

@@ -1,0 +1,17 @@
+.item{
+    border:solid;
+    border-color: var(--accent);
+    background-color: var(--accentLight);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.item p{
+    text-align: center;
+}
+.item button{
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em
+}

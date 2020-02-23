@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 import HomeView from './components/HomeView';
 import DetailsView from './components/DetailsView';
 import {CSSTransition} from 'react-transition-group';
+import './styles/colorTheme.module.css'
 require('dotenv').config()
 
 

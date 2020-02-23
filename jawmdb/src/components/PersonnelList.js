@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CastItem from './CastItem';
 import CrewItem from "./CrewItem";
+import style from '../styles/personnelList.module.css'
 
 class PersonnelList extends Component {
     constructor(props) {
@@ -20,7 +21,7 @@ class PersonnelList extends Component {
         if (this.state.viewIsCast == true && this.props.castList !== null) {
             const castList = this.props.castList.sort((a,b)=> (a.order <b.order)? -1: 1);
             return(
-                <div className="Person-List">
+                <div className={style.list}>
                     <button onClick={this.switchView}>View Crew</button>
                     {castList.map( (c,i)=> 
                     <CastItem 
@@ -38,7 +39,7 @@ class PersonnelList extends Component {
             crewList = crewList.sort((a,b)=> (a.department === b.department && a.name < b.name)? -1:1);
             
             return (
-                <div className="Person-List">
+                <div className={style.list}>
                     <button onClick={this.switchView}>View Cast</button>
                     {crewList.map((c,i)=>
                     <CrewItem 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import StarRating from './StarRating';
 import DetailStub from "./DetailStub";
 import Modal from "react-modal";
+import style from '../styles/movieDetail.module.css';
 
 class MovieDetail extends Component {
     
@@ -53,41 +54,49 @@ class MovieDetail extends Component {
 
     render( ) { 
         const film = this.props.film;
-        let revenue = film.revenue;
+        console.log(this.props.film);
+        // const companies= (!film.companies===null)? film.companies: ["No Data Available"];
+        const companies= (film.production.companies!==null)? film.production.companies: ["No Data Available"];
+        const countries= (film.production.countries!==null)? film.production.countries: ["No Data Available"];
+        const keywords= (film.details.keywords!==null)? film.details.keywords: ["No Data Available"];
+        const genres= (film.details.genres!==null)? film.details.genres: ["No Data Available"];
+        let revenue = (film.revenue!==null)? film.revenue: ["No Data Available"];
+        
         revenue = revenue/1000000;
         revenue = Number.parseFloat(revenue).toPrecision(5);
 
         return ( 
-            <div className="Film-Detail">
-                <div className="Title-Card">
-                    <h2 name="title">{film.title}</h2>
+            <div className={style.movieDetail}>
+                <div className={style.titleCard}>
+                    <h2 className={style.title} name="title">{film.title}</h2>
                     <img src ={`${this.posterURL}${film.poster}`} 
                     alt={film.title}
                     onClick={this.openModal}/>
-                    <p>{film.tagline}</p>
+                    <h4 className={style.tg}>{film.tagline}</h4>
+                    <h3>Overview</h3>
+                    <p>{film.details.overview}</p>
+                    
                 </div>
                 <button className="favorites-button" onClick={this.changeFavorites}>❤</button>
-                <div className="Film-Data-Card">
-                    <div className="Overview-Stub">
-                        <h3>Overview</h3>
-                             <p>{film.details.overview}</p>
-                    </div>
-                    <div className="Release-Stub">
-                        <h5>Release Date:</h5>
-                        <p>{film.release_date}</p>
-                        <h5>Revenue</h5><p>${revenue} Million</p>
-                        <h5>Rating</h5>
+                <div className={style.infoCard}>
+                    <div className={style.rInfo}>
+                    <p>
+                        <h4>Release Date:</h4>
+                        {film.release_date}
+                    </p>
+                        <h4>Revenue</h4><p>${revenue} Million</p>
+                        <h4>Rating</h4>
                         <StarRating rating={film.ratings.average}/>
-                        <h5>Links</h5>
+                        <h4>Links</h4>
                         <p>
                             <a href={`${this.tmdbURL}${film.tmdb_id}`}>tmdb</a>
                             <a href={`${this.imdbURL}${film.imdb_id}`}>IMDB</a>
                         </p>
                     </div>                    
-                    <DetailStub title="Companies" data={film.production.companies}/>
-                    <DetailStub title="Countries" data={film.production.countries}/>
-                         <DetailStub title="Keywords" data={film.details.keywords}/>
-                             <DetailStub title="Genres" data={film.details.genres}/>
+                    <DetailStub title="Companies" data={companies}/>
+                    <DetailStub title="Countries" data={countries}/>
+                         <DetailStub title="Keywords" data={keywords}/>
+                             <DetailStub title="Genres" data={genres}/>
                     <Modal 
                         isOpen={this.state.modalIsOpen}
                         onAfterOpen={this.state.afterOpenModal}

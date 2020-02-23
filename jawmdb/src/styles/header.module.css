@@ -1,0 +1,38 @@
+.header{
+    display: grid;
+    grid-template-columns: 80px 50% 80px;
+    grid-template-rows: 3em 3em 3em;
+    grid-template-areas: 
+    "T T ."
+    "T T A"
+    "T T ."
+    ;
+
+}
+.headerTitle{
+    grid-area: T;
+    display: grid;
+    grid-template-columns: 80px auto;
+    grid-template-rows: auto auto auto;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-areas: 
+    "L . ."
+    "L Ti Ti"
+    "L . ."
+    ;
+}
+
+.headerLogo{
+    grid-area: L;
+    display: inline-block;
+}
+
+.pageTitle{
+    grid-area: Ti;
+}
+.headerMenu{
+    grid-area: A;
+
+}

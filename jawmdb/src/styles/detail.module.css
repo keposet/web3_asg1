@@ -1,0 +1,18 @@
+.detailContainer{
+    /* header, faves, poster, filmD, cast&crew */
+    display: grid;
+    background-color: var(--background);
+    grid-template-columns: 60% 40%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header header"
+    "fave fave"
+    "return ."
+    "detail list"
+    ". list"
+    ;
+}
+
+.retLink{
+    grid-area: return;
+}

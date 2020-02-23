@@ -1,0 +1,17 @@
+    .stub{
+        background-color: var(--accentDark);
+        width: min-content;
+    }
+    .stubHead{
+        color:var(--darkText);
+    }
+    .ul{
+        list-style: none;
+    }
+
+    .li{
+        color: var(--text);
+        width: max-content;
+        margin-left: 0.5em;
+        margin-right: 0.5rem;
+    }

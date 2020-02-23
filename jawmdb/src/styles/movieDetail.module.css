@@ -1,0 +1,67 @@
+/* film detail
+        titleCard
+        faveButton -- global
+        filmData
+                Overview
+                releaseInfo
+                starRating
+                DetailStubs
+                Modal
+*/
+
+.movieDetail{
+    /* poster and film details */
+    grid-area: detail;
+    display: grid;
+    background-color: var(--accentDark);
+    grid-template-columns: 60% 40%;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "poster info"
+    ;
+}
+
+
+.titleCard{
+    background-color: var(--accentLight);
+    grid-area: poster;
+}
+
+.titleCard p, h2, h3, h4, img {
+    text-align: center;
+}
+
+.titleCard .title{
+    color: var(--text);
+}
+.titleCard .tg{
+    color: var(--background);
+}
+
+.titleCard img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* this is bad */
+h5, h3, h2, h4{
+    color: var(--darkText);
+}
+
+.infoCard{
+    grid-area: info;
+}
+/* does not shrink width, wide stubs
+.rInfo h4, p{
+    display: inline;
+} */
+.rInfo h4{
+    margin-top: 0px;
+}
+.rInfo p {
+    display: inline;
+}
+.rInfo p h4{
+    display: inline;
+}

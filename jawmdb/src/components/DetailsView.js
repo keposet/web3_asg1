@@ -5,6 +5,8 @@ import  FavoritesList from './FavoritesList.js';
 import MovieDetail from './MovieDetail';
 import PersonDetail from './PersonDetail';
 import PersonnelList from './PersonnelList';
+import '../styles/colorTheme.module.css'
+import style from '../styles/detail.module.css'
 
 class DetailsView extends Component {
 
@@ -80,15 +82,17 @@ class DetailsView extends Component {
         } else {
             if (this.state.filmView) {
                 return (
-                    <div className="Detail-View">
+                    <div className={style.detailContainer}>
                          <Header />
                         < FavoritesList 
                             favorites={ this.props.favorites } 
                             removeFav={ this.props.removeFav }
                         />
-                        <Link to='defaultview?search='>
-                            <button>Return 🔙</button>
-                        </Link>
+                        <div className={style.retLink}>
+                            <Link to='defaultview?search='>
+                                <button>Return 🔙</button>
+                            </Link>
+                        </div>
                         <MovieDetail 
                         film={this.state.film}
                         favorites={this.props.favorites}
