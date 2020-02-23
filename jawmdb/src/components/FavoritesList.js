@@ -1,6 +1,6 @@
 import React from 'react';
 import FavoriteItem from "./FavoriteItem";
-import { CSSTransition } from 'react-transition-group';
+import { CSSTransition, TransitionGroup, } from 'react-transition-group';
 import './Favorites.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
@@ -29,7 +29,15 @@ class FavoritesList extends React.Component {
                         appear
                     > 
                         <ul className="favorites">
+                            <TransitionGroup component={null}>
                             {   this.props.favorites.map( (fav, ind) => 
+                                <CSSTransition
+                                    key={fav.title}
+                                    timeout={300}
+                                    classNames="display"
+                                    unmountOnExit
+                                    appear
+                                > 
                                     <FavoriteItem 
                                         poster={fav.poster} 
                                         id={fav.id} 
@@ -37,8 +45,10 @@ class FavoritesList extends React.Component {
                                         removeFav={ this.props.removeFav } 
                                         key={ind}
                                     />
+                                </CSSTransition>
                                 )
                             }
+                            </TransitionGroup>
                         </ul>
                     </CSSTransition>
                 </div>

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 class MovieItem extends React.Component {
     handleView = () => {
@@ -21,7 +23,7 @@ class MovieItem extends React.Component {
                 <p>{this.props.title}</p>
                 <p className="center-align">{year}</p>
                 <p className="center-align">{this.props.rating}</p>
-                <button onClick={ this.handleFavorite }>♥</button>
+                <div className="favorite-btn" onClick={ this.handleFavorite }><FontAwesomeIcon icon={faHeart} /></div>
                 <Link to='filminfo'
                     filmID={this.props.filmID}
                 >
