@@ -25,6 +25,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+a {
+  color: white;
+}
 .home-view{
   
   font-weight: bold;
@@ -143,7 +146,7 @@ button:hover{
 }
 .home-page-enter-active{
   opacity: 1;
-  transition: all 500ms ease-out;
+  transition: opacity 500ms ease-out;
 }
 
 .home-page-exit{
@@ -151,7 +154,7 @@ button:hover{
 
 }
 .home-page-exit-active{
-  opacity: 0;
+  opacity: 0.5;
   transition: opacity 700ms ease-out;
 }
 
@@ -175,7 +178,6 @@ button:hover{
   top:-1000px;
   transition: all 700ms ease-out;
 }
-
 
 
 

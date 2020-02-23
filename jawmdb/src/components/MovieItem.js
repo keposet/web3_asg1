@@ -19,8 +19,17 @@ class MovieItem extends React.Component {
         const [year] = this.props.year.split('-');
         return (
             <li className="movie-list-item">
-                <img src={`${url}${this.props.poster}`} alt={this.props.title} />
-                <p>{this.props.title}</p>
+                <Link to='filminfo'
+                    filmID={this.props.filmID}
+                >
+                    <img src={`${url}${this.props.poster}`} alt={this.props.title} onClick={this.handleView} />
+                </Link>
+                
+                <Link to='filminfo'
+                    filmID={this.props.filmID}
+                >
+                    <p onClick={this.handleView}>{this.props.title}</p>
+                </Link>
                 <p className="center-align">{year}</p>
                 <p className="center-align">{this.props.rating}</p>
                 <div className="favorite-btn" ><FontAwesomeIcon icon={faHeart} onClick={ this.handleFavorite }/></div>
