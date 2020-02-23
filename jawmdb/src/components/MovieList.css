@@ -39,6 +39,10 @@
     grid-column: 3 / 3;
     justify-self: center;
   }
+
+  div.between {
+    display: inherit;
+  }
   
   
   

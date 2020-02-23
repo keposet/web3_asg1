@@ -50,8 +50,12 @@ class MovieFilter extends React.Component {
                     > 
                 <fieldset id="box">
                     <legend>Movie Filter</legend>
-                    <label className="label">Title</label>
-                    <input className="input" type="text" name="title" onChange={this.handleChange} />
+
+                    <div className="filter-label">
+                        <label className="filter-heading">Title</label>
+                        <input className="input" type="text" name="title" onChange={this.handleChange} />
+                    </div>
+                    
 
                     <YearFilter handleChange={ this.handleChange } handleYearChange={ this.handleRadioButtonChange } />
                     <RatingFilter handleChange={ this.handleChange } handleRatingChange={ this.handleRadioButtonChange }/>

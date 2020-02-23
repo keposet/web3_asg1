@@ -5,14 +5,15 @@ class YearFilter extends React.Component {
 
     handleRadioChange = (e) => {
         const selected = e.target.value;
-        let yearUpperBound = "";
-        if(selected === "BETWEEN") {
-            yearUpperBound = document.querySelector("input[name='yearUpper'].between").value;
-        } 
         const updatedFilter = {};
         updatedFilter['year'] = -1;
-        updatedFilter['yearUpper'] = yearUpperBound;
-        updatedFilter[e.target.nextElementSibling.name] = e.target.nextElementSibling.value;  
+        updatedFilter['yearUpper'] = "";
+        if(selected === "BETWEEN") {
+            updatedFilter['yearUpper'] = document.querySelector("input[name='yearUpper'].between").value;
+            updatedFilter['year'] = document.querySelector("input[name='year'].between").value;
+        } else {
+            updatedFilter[e.target.nextElementSibling.name] = e.target.nextElementSibling.value;  
+        }
 
         this.props.handleYearChange(updatedFilter['year'], updatedFilter['yearUpper'], 'year', 'yearUpper');
 
@@ -21,11 +22,11 @@ class YearFilter extends React.Component {
 
     render() {
         return(
-            <label className="label"> 
-                <div className="filterHeading">Year</div>
-                <label> 
+            <label className="filter-label"> 
+                <div className="filter-heading">Year</div>
+                <label > 
                     <input 
-                        className="input" 
+                        className="radio-input" 
                         type="radio" 
                         value="BEFORE"
                         checked={this.state.selected === "BEFORE"} 
@@ -37,7 +38,7 @@ class YearFilter extends React.Component {
 
                 <label> 
                     <input 
-                        className="input" 
+                        className="radio-input" 
                         type="radio" 
                         value="AFTER" 
                         checked={this.state.selected === "AFTER"} 
@@ -48,14 +49,17 @@ class YearFilter extends React.Component {
 
                 <label> 
                     <input 
-                        className="input" 
+                        className="radio-input" 
                         type="radio" 
                         value="BETWEEN" 
                         checked={this.state.selected === "BETWEEN"} 
                         onChange={this.handleRadioChange} /> 
                     Between
-                    <input className="input between" type="number" name="year" disabled={this.state.selected !== "BETWEEN"} onChange={this.props.handleChange}/>
-                    <input className="input between" type="number" name="yearUpper" disabled={this.state.selected !== "BETWEEN"} onChange={this.props.handleChange}/>
+                    <div className="input">
+                        <input className="between" type="number" name="year" disabled={this.state.selected !== "BETWEEN"} onChange={this.props.handleChange}/>
+                        <input className="between" type="number" name="yearUpper" disabled={this.state.selected !== "BETWEEN"} onChange={this.props.handleChange}/>
+                    </div>
+                    
                 </label> 
             </label>
         );

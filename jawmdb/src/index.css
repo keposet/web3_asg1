@@ -97,10 +97,6 @@ code {
   background-color: var(--splash-dim);
 
 }
-.label label {
-  display: grid;
-  grid-template-columns: auto 1fr 1fr auto;
-}
 
 .right-align {
   text-align: right;

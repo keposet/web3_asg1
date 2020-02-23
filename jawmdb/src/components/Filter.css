@@ -1,11 +1,6 @@
 .filter{
     display: flex;
 }
-.filterHeading {
-    grid-column-start: 1;
-    grid-column-end: 4;
-  }
-  
 
 .hide-enter {
     opacity: 0;
@@ -16,7 +11,7 @@
     opacity: 1;
     width: 100%;
     
-    transition: all 300ms ease-in;
+    transition: all 300ms ease;
 }
 
 
@@ -30,4 +25,37 @@
     width:0%;
 
     transition: all 300ms ease-out;
+}
+
+.filter-label  {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}
+.filter-label label {
+    line-height: 2em;
+    grid-column: 1/4;
+}
+.filter-heading {
+    font-weight: bold;
+    grid-column: 1/4;
+  }
+
+#box{
+    min-width: 0;
+    max-width: 500px;
+}
+
+input[type=number]{
+    appearance: textfield;
+}
+
+input{
+    margin-left: 2em;
+}
+
+.input, .filter-label label span {
+    float: right;
+    margin-right: 10px;
+    line-height: 100%;
+    text-align: center;
 }
