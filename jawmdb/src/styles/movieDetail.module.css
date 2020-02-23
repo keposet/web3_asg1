@@ -21,6 +21,42 @@
     ;
 }
 
+.personDetail{
+    grid-area:detail;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    ". Nt Nt ."
+    ". Na Na ."
+    "Bdt Bdd Ph Ph"
+    "Pbt Pbp Ph Ph"
+    "IM IL Ph Ph"
+    "BH . . ."
+    "Bi Bi Bi Bi"
+    ". R R . "
+    ;
+
+    background-color: var(--accentDark);
+}
+
+.nameHead{
+    grid-area: Nt;
+}
+.birthHead{ grid-area: Bdt; text-align: center;}
+.placeBirthTitle{ grid-area: Pbt; text-align: center;}
+.nameActual{ grid-area: Na; text-align: center;}
+.bioHead{ grid-area: BH; text-align: center;}
+
+.linkHead{ grid-area: IM; text-align: center;}
+
+.birthDate{ grid-area: Bdd; text-align: center;padding-top: 2em;}
+.pobD{ grid-area: Pbp; text-align: center;padding-top: 2em;}
+.photo{ grid-area: Ph; text-align: center;margin-left: 3em;}
+.link{ grid-area: IL; text-align: center;padding-top: 2em;}
+.bio{ grid-area: Bi; text-align: center;}
+.ret{ grid-area: R; text-align: center;}
+
 
 .titleCard{
     background-color: var(--accentLight);

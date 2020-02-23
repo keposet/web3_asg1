@@ -107,7 +107,7 @@ class DetailsView extends Component {
                 );
             }else {
                 return (
-                    <div className="Detail-View">
+                    <div className={style.detailContainer}>
                         <Header />
                         < FavoritesList 
                             favorites={ this.props.favorites } 
