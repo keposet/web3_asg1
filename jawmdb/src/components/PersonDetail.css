@@ -1,0 +1,48 @@
+.Person-Detail{
+    background-color: var(--accent-dark);
+    height: max-content;
+    margin-top: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 2em;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr;
+    grid-template-rows: repeat(6,70px) ;
+    grid-template-areas: 
+    ". return link"
+    "nameH name photo"
+    "birthH birth photo"
+    "placeH place photo"
+    "bioH . photo"
+    "bio bio bio"
+    "bio bio bio"
+    "bio bio bio"
+    ;
+}
+
+.Person-Detail h2, h3, h5, p{
+    margin-top: unset;
+    margin-bottom: unset;
+}
+
+.nameHead{
+    grid-area: nameH;
+}
+.name{grid-area: name;}
+img{grid-area: photo;}
+.birthHead{grid-area: birthH;}
+.birth{grid-area: birth;}
+.placeHead{grid-area: placeH;}
+.place{grid-area: place;}
+.bioHead{grid-area: bioH;}
+.bio{grid-area: bio;}
+.actorLink{grid-area: link;}
+
+
+.Path-Button{
+    grid-area: return;
+    margin: 1em;
+    margin-left: 6em;
+    margin-right: 6em;
+}

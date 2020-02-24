@@ -1,7 +1,20 @@
+.Cast-List{ 
+    padding-top: 2em; 
+}
+.list-view{ 
+    margin-left: 3em; 
+}
+.list-title{
+    text-align: center;
+}
+.Crew-List{ padding-top: 2em; }
 .Cast-Item{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: none;
+}
+.cast-titles{
+    padding-bottom: 1em;
 }
 
 .cast-titles .t2{

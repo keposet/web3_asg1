@@ -21,7 +21,8 @@ class PersonnelList extends Component {
             const castList = this.props.castList.sort((a,b)=> (a.order <b.order)? -1: 1);
             return(
                 <div className="Cast-List">
-                    <button onClick={this.switchView}>View Crew</button>
+                    <button className="list-view" onClick={this.switchView}>View Crew</button>
+                     <h2 className="list-title">Cast</h2>
                     <div className="Person-List">
                     <div className="cast-titles">
                             <h3 className="t1">Character</h3>
@@ -45,7 +46,8 @@ class PersonnelList extends Component {
             
             return (
                 <div className="Crew-List">
-                    <button onClick={this.switchView}>View Cast</button>
+                    <button onClick={this.switchView}>View Cast</button> 
+                    <h2  className="list-title">Crew</h2>
                     <div className="Person-List">
                         <div className="crew-Titles">
                             <h3 className="t1">Department</h3>
