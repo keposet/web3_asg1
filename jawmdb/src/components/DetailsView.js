@@ -44,7 +44,7 @@ class DetailsView extends Component {
                 localStorage.setItem('filmID', JSON.stringify(this.props.filmID))
                 filmID = this.props.filmID;
             }
-            const movieURL = `http://www.randyconnolly.com/funwebdev/3rd/api/movie/movies.php?id=${filmID}`;
+            const movieURL = `https://www.randyconnolly.com/funwebdev/3rd/api/movie/movies.php?id=${filmID}`;
             const resp = await fetch(`${movieURL}`);
             const data = await resp.json();
             this.setState({film: {...data}, loading: false});
@@ -85,7 +85,7 @@ class DetailsView extends Component {
                     localStorage.setItem('filmID', JSON.stringify(this.props.filmID))
                     filmID = this.props.filmID;
                 }
-                const movieURL = `http://www.randyconnolly.com/funwebdev/3rd/api/movie/movies.php?id=${filmID}`;
+                const movieURL = `https://www.randyconnolly.com/funwebdev/3rd/api/movie/movies.php?id=${filmID}`;
                 const resp = await fetch(`${movieURL}`);
                 const data = await resp.json();
                 this.setState({film: {...data}, loading: false});

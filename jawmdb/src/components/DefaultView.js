@@ -24,7 +24,7 @@ class DefaultView extends React.Component {
             let movies = JSON.parse(movieObj);
             //If they are not, fetch the movies from the API
             if(movies == null || movies == "") {
-                const movieUrl = "http://www.randyconnolly.com/funwebdev/3rd/api/movie/movies-brief.php?id=ALL";
+                const movieUrl = "https://www.randyconnolly.com/funwebdev/3rd/api/movie/movies-brief.php?id=ALL";
                 const response = await fetch(movieUrl);
                 movies = await response.json();
 
