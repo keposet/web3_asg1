@@ -54,6 +54,9 @@
     cursor: pointer;
   }
 
+  /*Classes for the transition of showing and hiding the favorites list. 
+      ALso used when delting and adding favorite items*/
+      
   .display-enter img{
     opacity: 0;
     height: 0px;

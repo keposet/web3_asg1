@@ -36,7 +36,7 @@ class HomeView extends React.Component {
                     </div>
                    
                 </div>
-                <p>Image Credit to: Denise Jans @dmjdenise from unsplash</p>
+                <p>Image Credit to: Denise Jans <a href="https://unsplash.com/@dmjdenise">@dmjdenise</a> from unsplash</p>
                 <img className="curtain-call" src={`${curtUrl}`}/>
             </div>
         );

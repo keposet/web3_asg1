@@ -19,7 +19,7 @@ class HeaderMenu extends React.Component {
     }
 
     afterOpenModal(){
-        //
+        //Funtion needed for modal to compile
     }
 
     closeModal(){
