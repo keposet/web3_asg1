@@ -2,6 +2,7 @@
   "name": "jawmdb",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "https://jawmdb.hutson.ca",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
