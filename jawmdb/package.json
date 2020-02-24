@@ -1,4 +1,5 @@
 {
+  "homepage" : "https://hutson.ca/jawmdb",
   "name": "jawmdb",
   "version": "0.1.0",
   "private": true,
@@ -43,4 +44,6 @@
   "devDependencies": {
     "@zeit/next-css": "^1.0.1"
   }
+
+  
 }
