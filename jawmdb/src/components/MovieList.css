@@ -71,5 +71,22 @@
     color: red;
   }
  
+  /*CssTransition classes*/
+  .movie-list-display-enter{
+    opacity: 0;
+  }
+  .movie-list-display-enter-active{
+    opacity: 1;
+    transition: opacity 250ms;
+  }
+
+  .movie-list-display-exit{
+    opacity: 1;
+  }
+  .movie-list-display-exit-active{
+    opacity: 0;
+    transition: opacity 250ms;
+  }
+
   
   

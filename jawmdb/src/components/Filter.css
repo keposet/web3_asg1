@@ -69,15 +69,10 @@ input[type=range]{
 }
 
 input[type=range]:active{
-    width: 50%;
-    background-color: transparent;
     cursor: grabbing;
 }
 
-
 input[type=range]:disabled{
-    width: 50%;
-    background-color: transparent;
     cursor: not-allowed;
 }
 

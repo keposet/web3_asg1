@@ -10,16 +10,22 @@ class MovieList extends React.Component {
     state = { selected:"title", reverse:true };
 
     sortValue = (e) => {
+        //Default sort by title
         let sortOrder = this.props.sortTitle;
+
+        //See what was selected. If ratings or year sort by that algorithm
         const selected = e.currentTarget.value;
         if( selected === "year") {
             sortOrder = this.props.sortYear;
         } else if( selected === "rating") {
             sortOrder = this.props.sortRating;
         }
-        const reverse = this.state.selected === selected && this.state.reverse;
+        //Set the reverse order to (the current selected and the opposite of the previous revresal choice)
+        const reverse = (this.state.selected === selected) && !this.state.reverse;
+
+        //Sort the movie list based on chosen sort method (title, year, or rating) and whether or not to reverse the order
         this.props.sortMovies(sortOrder, reverse);
-        this.setState( { selected: selected , reverse: !this.state.reverse});
+        this.setState( { selected: selected , reverse: reverse});
     }
     render() {
         const display = this.props.movies.length > 0 || this.props.loading;
@@ -35,16 +41,20 @@ class MovieList extends React.Component {
                 <div className="empty-search" hidden={ display }> Your search found no results</div>
                 <img className="loading" src={loading} alt="loading" hidden={ !this.props.loading }/>
                 
+       
                 <ul className="movies">
-                    {this.props.movies.map( (m) => <MovieItem 
-                    title={m.title} 
-                    poster={m.poster} 
-                    rating={m.ratings.average} 
-                    year={m.release_date} 
-                    filmID={m.id}
-                    handleView={this.props.handleView}
-                    addFav={ this.props.addFav }
-                    key={m.id} /> ) }
+                    {this.props.movies.map( (m) => 
+                        <MovieItem 
+                            title={m.title} 
+                            poster={m.poster} 
+                            rating={m.ratings.average} 
+                            year={m.release_date} 
+                            filmID={m.id}
+                            handleView={this.props.handleView}
+                            addFav={ this.props.addFav }
+                            key={m.id} 
+                        /> 
+                    ) }
                 </ul>
             </div>
         );

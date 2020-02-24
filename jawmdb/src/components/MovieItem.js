@@ -6,9 +6,8 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 class MovieItem extends React.Component {
     handleView = () => {
         this.props.handleView(this.props.filmID);
-
-        
     }
+    
     handleFavorite = () => {
         const newFav = { poster:this.props.poster, id:this.props.filmID, title:this.props.title};
         this.props.addFav(newFav);

@@ -96,7 +96,7 @@ class DefaultView extends React.Component {
         this.setState( { filteredMovies: filtered } );
     }
 
-    //Function used by MovieFilter, filters the movies array based on given Title, year, and rating.
+    //Function used by MovieFilter, filters the movies array based on given Title, year range, and rating range.
       // as defined in filterList (title:"", yearupper:"", yearlower:"", ratingUpper:"", raringLower:"")
     filter = (filterList) => {
         let filtered = this.filterByTitle(this.state.movies, filterList.title);
@@ -169,6 +169,5 @@ class DefaultView extends React.Component {
     }
 
 } 
-
 
 export default DefaultView;

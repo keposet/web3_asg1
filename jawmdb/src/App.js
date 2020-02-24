@@ -22,6 +22,7 @@ class App extends React.Component {
   }
 
   addToFavorites = (favorite) => {
+      //Take the current list of favorites, if the passed in favorite is not in the list add it to favorites
       let newFavorites = this.state.favorites;
       if( !newFavorites.find( f => f.id === favorite.id)) {
         newFavorites.push( { poster:favorite.poster, id:favorite.id, title:favorite.title } );
@@ -30,6 +31,7 @@ class App extends React.Component {
   }
 
   removeFromFavorites = (id) => {
+      //Look through the favorites array and filter out the movie with the passed in id.
       let newFavorites = this.state.favorites;
       newFavorites = newFavorites.filter( fav => fav.id != id);
       this.setState( { favorites:newFavorites } );

@@ -11,10 +11,12 @@ class MovieFilter extends React.Component {
     state = {filterCritiria: { title:"", yearUpper:"", year:"", ratingLower:"", ratingUpper:"" }, hidden: false};
 
     handleSubmit = (e) => {
+        //Send the current filter critieria to the defualt view so the movie list can be filtered
         e.preventDefault();
         console.log(this.state.filterCritiria);
         this.props.filter(this.state.filterCritiria);
     }
+    
     hidePanel = () =>{
         const newHidden = !this.state.hidden;
         this.setState( { hidden: newHidden } );
