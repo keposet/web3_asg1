@@ -6,8 +6,12 @@ const About = function (props) {
         <div>
             <p>JAWMDB (Jason Austin Watched Movies Data Base) App made by Jason and Austin.</p>
             <p>Github link: <a href="https://github.com/keposet/web3_asg1">https://github.com/keposet/web3_asg1</a></p>
+            <br></br>
+            <p>Film Metadata povided by <a href="https://www.themoviedb.org/">The Movie Database</a></p>
+            <br></br>
             <p>Technology used:</p>
             <ul>
+                <li>React-Modal: <a href="https://www.npmjs.com/package/react-modal">react-modal npm</a> </li>
                 <li>React-Modal: <a href="https://www.npmjs.com/package/react-modal">react-modal npm</a> </li>
                 <li>Loading svg "Flowing Gradient" from: <a href="https://icons8.com/preloaders/en/free"> icons8 Preloaders</a></li>
                 <li>Logo Icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></li>

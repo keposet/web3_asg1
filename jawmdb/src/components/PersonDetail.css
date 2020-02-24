@@ -46,3 +46,9 @@ img{grid-area: photo;}
     margin-left: 6em;
     margin-right: 6em;
 }
+
+.actorLink img{
+    margin-top: 5px;
+    width: 124px;
+    height: 70x;
+}

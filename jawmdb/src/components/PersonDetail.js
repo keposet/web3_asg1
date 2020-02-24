@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import imdb from "../IMDb_logo.svg";
 import './PersonDetail.css'
 
 class PersonDetail extends Component {
@@ -25,7 +26,7 @@ class PersonDetail extends Component {
             <p className="place">{this.props.place_of_birth}</p>
             <h5 className="bioHead">Biography</h5>
             <p className="bio">{this.props.biography}</p>
-            <a className="actorLink" href={`https://www.imdb.com/name/${this.props.imdb_id}`}>IMDB Icon</a>
+        <a className="actorLink" href={`https://www.imdb.com/name/${this.props.imdb_id}`}><img src={imdb} alt="actor_imdb"/>  </a>
             <button className="Path-Button" onClick={this.viewFilm}>Return to Film 🎞</button>
         </div> 
         );

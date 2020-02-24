@@ -30,8 +30,8 @@ class MovieItem extends React.Component {
                 >
                     <p onClick={this.handleView}>{this.props.title}</p>
                 </Link>
-                <p className="center-align">{year}</p>
-                <p className="center-align">{this.props.rating}</p>
+                <p className="center-align mi-year">{year}</p>
+                <p className="center-align mi-rating">{this.props.rating}</p>
                 <div className="favorite-btn" ><FontAwesomeIcon icon={faHeart} onClick={ this.handleFavorite }/></div>
                 <Link to='filminfo'
                     filmID={this.props.filmID}

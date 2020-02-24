@@ -60,3 +60,13 @@
 .Cast-Item, .Crew-Item {
     display: flex;
 }
+
+.t-svg{
+     height: 80px;
+     width: 60px;
+     margin-right: 1em;
+}
+.i-svg{
+    height: 70px;
+    width: 124px;
+}

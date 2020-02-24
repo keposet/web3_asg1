@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import StarRating from './StarRating';
 import DetailStub from "./DetailStub";
 import Modal from "react-modal";
-import './DetailsView.css'
+import imdbLogo from "../IMDb_logo.svg";
+import tmdbLogo from "../tmdb.svg";
+import './DetailsView.css';
 
 class MovieDetail extends Component {
     
@@ -81,8 +83,8 @@ class MovieDetail extends Component {
                         <StarRating rating={film.ratings.average}/>
                         <h5>Links</h5>
                         <p>
-                            <a href={`${this.tmdbURL}${film.tmdb_id}`}>tmdb</a>
-                            <a href={`${this.imdbURL}${film.imdb_id}`}>IMDB</a>
+                            <a href={`${this.tmdbURL}${film.tmdb_id}`}><img className="t-svg" src={tmdbLogo} alt="tmdbLink"/></a>
+                            <a href={`${this.imdbURL}${film.imdb_id}`}><img className="i-svg" src={imdbLogo} alt="imdbLink"/></a>
                         </p>
                     </div>                    
                     <DetailStub title="Companies" data={film.production.companies}/>
