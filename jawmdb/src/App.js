@@ -18,7 +18,6 @@ class App extends React.Component {
     }; 
   }
   viewMovie = (id) => {
-    console.log(id);
     this.setState({...this.state,viewFilmID : [id]} )
   }
 

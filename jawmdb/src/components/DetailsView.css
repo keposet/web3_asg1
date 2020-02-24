@@ -22,9 +22,10 @@
     padding: 2em;
     background-color: var(--accent-dark);
     border-radius: 10px;
-
+    
     overflow-y: scroll;
     overflow-x: hidden;
+    max-height: 75vh;
     min-height: 50vh;
     min-width: 30vw;
 }

@@ -43,8 +43,8 @@ img{grid-area: photo;}
 .Path-Button{
     grid-area: return;
     margin: 1em;
-    margin-left: 6em;
-    margin-right: 6em;
+    margin-left: 4em;
+    margin-right: 4em;
 }
 
 .actorLink img{

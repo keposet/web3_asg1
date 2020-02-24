@@ -30,7 +30,6 @@ class MovieDetail extends Component {
         
 
     changeFavorites= () => {
-        console.log(this.props);
         const film = this.props.film;
         const faves = this.props.favorites;
         const add = this.props.addFav;
@@ -56,6 +55,10 @@ class MovieDetail extends Component {
 
     render( ) { 
         const film = this.props.film;
+        const companies = (this.props.film.production.companies !== null)? this.props.film.production.companies: [{name :"Data Not Available"}];
+        const countries = (this.props.film.production.countries !== null)? this.props.film.production.countries: [{name :"Data Not Available"}];
+        const keywords = (this.props.film.details.keywords !== null)? this.props.film.details.keywords: [{name :"Data Not Available"}];
+        const genres = (this.props.film.details.genres !== null)? this.props.film.details.genres: [{name :"Data Not Available"}];
         let revenue = film.revenue;
         revenue = revenue/1000000;
         revenue = Number.parseFloat(revenue).toPrecision(5);
@@ -87,10 +90,10 @@ class MovieDetail extends Component {
                             <a href={`${this.imdbURL}${film.imdb_id}`}><img className="i-svg" src={imdbLogo} alt="imdbLink"/></a>
                         </p>
                     </div>                    
-                    <DetailStub title="Companies" data={film.production.companies}/>
-                    <DetailStub title="Countries" data={film.production.countries}/>
-                         <DetailStub title="Keywords" data={film.details.keywords}/>
-                             <DetailStub title="Genres" data={film.details.genres}/>
+                    <DetailStub title="Companies" data={companies}/>
+                    <DetailStub title="Countries" data={countries}/>
+                         <DetailStub title="Keywords" data={keywords}/>
+                             <DetailStub title="Genres" data={genres}/>
                     <Modal 
                         isOpen={this.state.modalIsOpen}
                         onAfterOpen={this.state.afterOpenModal}
