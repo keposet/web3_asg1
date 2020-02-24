@@ -5,6 +5,7 @@
   --accent-dark: #397367;
   --focus: #52489c;
   --accent-light: #5da399;
+  --text:#fefefa;
 
 }
 
@@ -18,7 +19,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background);
-  color: white;
+  color: #fefefa;
 }
 ul {
   list-style-type: none;
@@ -51,8 +52,11 @@ a {
   margin: 20px;
 }
 
+
 .Detail-View {
   display: grid;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 .movie-browser {
@@ -68,6 +72,8 @@ a {
   display: grid;
   grid-template-rows: auto auto 2fr;
   grid-template-columns: auto minmax(auto, 1fr);
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 .header {
@@ -125,12 +131,14 @@ button {
   cursor: pointer;
   outline: none;
   border-radius: 2px;
+  color: var(--background);
 }
 
 
 
 button:hover{
   background-color: var(--focus);
+  color: var(--text);
 }
 
 /*Classes for animating the homepage entering and exiting*/
