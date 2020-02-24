@@ -52,7 +52,7 @@
 }
 
 .Person-List {
-    overflow: scroll;
+    overflow-y: scroll;
     height: 750px;
     padding-left: 0.5em;
 }

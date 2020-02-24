@@ -19,7 +19,7 @@
     margin: 0;
     grid-column: 1 / span 6;
 
-    overflow: scroll;
+    overflow-y: scroll;
   }
   
   .movie-list-item {

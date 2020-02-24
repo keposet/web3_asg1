@@ -188,3 +188,12 @@ button:hover{
   border-radius: 10px;
 }
 
+.modal-lightbox {
+  background-color: var(--accent-dark);
+  padding: 2em;
+  margin: 2em;
+  border: 2px solid var(--accent-light);
+  border-radius: 10px;
+  width: fit-content;
+}
+

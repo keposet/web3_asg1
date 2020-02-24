@@ -21,7 +21,9 @@ class DetailsView extends Component {
     }
 
     viewCredit = (id) => {
-        this.setState({loading: true, castID: id, filmView: false});
+        if (id !== this.state.castID) {
+            this.setState({loading: true, castID: id, filmView: false});    
+        }
     }
 
     viewFilm = () => {
@@ -54,6 +56,7 @@ class DetailsView extends Component {
     }
 
     async componentDidUpdate(prevProps, prevState) {
+        // if new cast member then fetch
         if (prevState.castID !=this.state.castID) {
             try {             
                 // this should be a node .env
@@ -64,14 +67,12 @@ class DetailsView extends Component {
             } catch (error) {
                 console.log(error);
             }
-        } else if (prevState.filmView != this.state.filmView || prevState.film != this.state.film) {
-            try {
-                this.setState({loading:false});
-            } catch (error) {
-                console.log(error);
-            }   
+        //if returning to movie view, load movie data from  state
+         } else if (prevState.filmView != this.state.filmView || prevState.film != this.state.film) {
+                 this.setState({loading:false});
         }
-    }
+}
+
     render() { 
         if (this.state.loading) {
             //render loading gif
