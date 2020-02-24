@@ -44,6 +44,7 @@ class FavoritesList extends React.Component {
                                     title={fav.title}  
                                     removeFav={ this.props.removeFav } 
                                     key={ind}
+                                    viewFavDetail={this.props.viewFavDetail}
                                 />
                             </CSSTransition>
                             )

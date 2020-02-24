@@ -29,7 +29,7 @@ class DetailsView extends Component {
     viewFilm = () => {
         this.setState({loading: true, filmView: true});
     }
-    
+
 //pull the else, add to CDU
     async componentDidMount() {
         try {
@@ -41,8 +41,6 @@ class DetailsView extends Component {
             }
             // check if props.fid ""
             if(this.props.filmID !== "" && this.props.filmID !== filmID){
-                console.log('shouldnt be here on f5');
-                console.log(this.props);
                 localStorage.setItem('filmID', JSON.stringify(this.props.filmID))
                 filmID = this.props.filmID;
             }
@@ -52,11 +50,14 @@ class DetailsView extends Component {
             this.setState({film: {...data}, loading: false});
         } catch (error) {
             console.log(error);
-        }    
+        }
     }
 
     async componentDidUpdate(prevProps, prevState) {
         // if new cast member then fetch
+        console.log("CDU on fave click");
+        console.log(`prevprops ${prevProps}`);
+        console.log(`current rops ${this.props}`);
         if (prevState.castID !=this.state.castID) {
             try {             
                 // this should be a node .env
@@ -68,8 +69,29 @@ class DetailsView extends Component {
                 console.log(error);
             }
         //if returning to movie view, load movie data from  state
-         } else if (prevState.filmView != this.state.filmView || prevState.film != this.state.film) {
+        } else if (prevState.filmView != this.state.filmView 
+            || prevState.film != this.state.film ) {
                  this.setState({loading:false});
+        } else if ( prevProps.filmID !== this.props.filmID){
+            try {
+                const filmStorageID = localStorage.getItem('filmID');
+                let filmID = JSON.parse(filmStorageID);
+                // filmID added to local storage
+                if (filmID ===null || filmID === "") {
+                    localStorage.setItem('filmID', JSON.stringify(this.props.filmID))
+                }
+                // check if props.fid ""
+                if(this.props.filmID !== "" && this.props.filmID !== filmID){
+                    localStorage.setItem('filmID', JSON.stringify(this.props.filmID))
+                    filmID = this.props.filmID;
+                }
+                const movieURL = `http://www.randyconnolly.com/funwebdev/3rd/api/movie/movies.php?id=${filmID}`;
+                const resp = await fetch(`${movieURL}`);
+                const data = await resp.json();
+                this.setState({film: {...data}, loading: false});
+            } catch (error) {
+                console.log(error);
+            }
         }
 }
 
@@ -87,6 +109,7 @@ class DetailsView extends Component {
                         < FavoritesList 
                             favorites={ this.props.favorites } 
                             removeFav={ this.props.removeFav }
+                            viewFavDetail={this.props.viewFavDetail}
                         />
                             <div className="return-holder">
                                 <Link to='defaultview?search='>
@@ -114,6 +137,7 @@ class DetailsView extends Component {
                         < FavoritesList 
                             favorites={ this.props.favorites } 
                             removeFav={ this.props.removeFav }
+                            viewFavDetail={this.props.viewFavDetail}
                         />
                         <PersonDetail 
                             name={this.state.castMember.name}

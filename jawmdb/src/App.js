@@ -18,6 +18,7 @@ class App extends React.Component {
     }; 
   }
   viewMovie = (id) => {
+    console.log(id);
     this.setState({...this.state,viewFilmID : [id]} )
   }
 
@@ -63,6 +64,7 @@ class App extends React.Component {
                   handleView = {this.viewMovie}
                   addFav={ this.addToFavorites }
                   removeFav={ this.removeFromFavorites }
+                  viewFavDetail={this.viewMovie}
                 />
           }
         />
@@ -72,6 +74,7 @@ class App extends React.Component {
             addFav={ this.addToFavorites }
             removeFav={ this.removeFromFavorites }
             filmID={this.state.viewFilmID}
+            viewFavDetail={this.viewMovie}
             />}
           />
       </main>
