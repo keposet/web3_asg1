@@ -1,0 +1,81 @@
+details.genres
+
+details.keywords
+
+production.crew
+
+production.cast
+
+production.companies
+
+
+MovieDetail.js:23 
+{id: 102, tmdb_id: 453, imdb_id: "tt0268978", release_date: "2001-12-11", title: "A Beautiful Mind", …}
+id: 102
+tmdb_id: 453
+imdb_id: "tt0268978"
+release_date: "2001-12-11"
+title: "A Beautiful Mind"
+runtime: 135
+revenue: 313542341
+tagline: "I need to believe that something extra ordinary is possible..."
+poster: "/4SFqHDZ1NvWdysucWbgnYlobdxC.jpg"
+ratings:
+popularity: 11.93646
+average: 7.7
+details:
+    overview: "At Princeton University, John Nash struggles to make a worthwhile contribution to serve as his legacy to the world of mathematics. He finally makes a revolutionary breakthrough that will eventually earn him the Nobel Prize. After graduate school he turns to teaching, becoming romantically involved with his student Alicia. Meanwhile the government asks his help with breaking Soviet codes, which soon gets him involved in a terrifying conspiracy plot. Nash grows more and more paranoid until a discovery that turns his entire world upside down. Now it is only with Alicia's help that he will be able to recover his mental strength and regain his status as the great mathematician we know him as today.."
+    genres: Array(2)
+        0: {id: 18, name: "Drama"}
+        1: {id: 10749, name: "Romance"}
+
+    keywords: Array(14)
+        0: {id: 30, name: "individual"}
+
+production:
+
+    crew: Array(60)
+    0:
+        credit_id: "52fe4245c3a36847f8011443"
+        department: "Camera"
+        gender: 2
+        id: 151
+        job: "Director of Photography"
+        name: "Roger Deakins"
+    1: {credit_id: "52fe4245c3a36847f801140d", department: "Production", gender: 2, id: 339, job: "Producer", …}
+
+    cast: Array(38)
+    0:
+        cast_id: 4
+        character: "John Nash"
+        credit_id: "52fe4245c3a36847f80113a3"
+        gender: 2
+        id: 934
+        name: "Russell Crowe"
+    1: {cast_id: 5, character: "William Parcher", credit_id: "52fe4245c3a36847f80113a7", gender: 2, id: 228, …}
+
+    companies: Array(3)
+    0: {name: "Imagine Entertainment", id: 23}
+    1: {name: "DreamWorks SKG", id: 27}
+    2: {name: "Universal Pictures", id: 33}
+
+    countries: Array(1)
+    0: {iso_3166_1: "US", name: "United States of America"}
+
+
+    TMDB API
+{birthday: "1971-05-27", known_for_department: "Acting", deathday: null, id: 6162, name: "Paul Bettany", …}
+    birthday: "1971-05-27"
+    known_for_department: "Acting"
+    deathday: null
+    id: 6162
+    name: "Paul Bettany"
+    also_known_as: (2) ["Пол Беттани", "Πολ Μπέτανι"]
+    gender: 2
+    biography: "Paul Bettany was born into a theatre family. His father, Thane Bettany, is still an actor but his mother, Anne Kettle, has retired from acting. His maternal grandmother, Olga Gwynne, was a successful actress, while his maternal grandfather, Lesley Kettle, was a musician and promoter. He was brought up in North West London and, after the age of 9, in Hertfordshire (Brookmans Park). Immediately after finishing at Drama Centre, he went into the West End to join the cast of "An Inspector Calls", though when asked to go on tour with this play, he chose to stay in England."
+    popularity: 3.934
+    place_of_birth: "Harlesden, London, England, UK "
+    profile_path: "/1zmr8C7TCqsoCjDVKJycVp2wWyf.jpg"
+    adult: false
+    imdb_id: "nm0079273"
+    homepage: nul

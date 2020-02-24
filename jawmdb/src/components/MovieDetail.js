@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import StarRating from './StarRating';
 import DetailStub from "./DetailStub";
 import Modal from "react-modal";
+import './DetailsView.css'
 
 class MovieDetail extends Component {
     

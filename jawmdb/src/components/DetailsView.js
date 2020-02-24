@@ -86,7 +86,11 @@ class DetailsView extends Component {
                             favorites={ this.props.favorites } 
                             removeFav={ this.props.removeFav }
                         />
-                        
+                            <div className="return-holder">
+                                <Link to='defaultview?search='>
+                                    <button>Return 🔙</button>
+                                </Link>
+                            </div>
                         <MovieDetail 
                         film={this.state.film}
                         favorites={this.props.favorites}
@@ -97,9 +101,8 @@ class DetailsView extends Component {
                             castList={this.state.film.production.cast} 
                             crewList={this.state.film.production.crew} 
                             viewCredit={this.viewCredit}/>
-                        <Link to='defaultview?search='>
-                            <button>Return 🔙</button>
-                        </Link>
+                        
+                        
                     </div>
                 );
             }else {

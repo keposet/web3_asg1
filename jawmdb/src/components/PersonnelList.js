@@ -23,6 +23,10 @@ class PersonnelList extends Component {
                 <div className="Cast-List">
                     <button onClick={this.switchView}>View Crew</button>
                     <div className="Person-List">
+                    <div className="cast-titles">
+                            <h3 className="t1">Character</h3>
+                            <h3 className="t2">Actor</h3>
+                        </div>
                     {castList.map( (c,i)=> 
                     <CastItem 
                         character={c.character} 
@@ -43,6 +47,11 @@ class PersonnelList extends Component {
                 <div className="Crew-List">
                     <button onClick={this.switchView}>View Cast</button>
                     <div className="Person-List">
+                        <div className="crew-Titles">
+                            <h3 className="t1">Department</h3>
+                            <h3 className="t2">Role</h3>
+                            <h3 className="t3">Name</h3>
+                        </div>
                     {crewList.map((c,i)=>
                     <CrewItem 
                         department={c.department}

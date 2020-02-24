@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './personItem.css'
 
 class CrewItem extends Component {
 

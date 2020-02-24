@@ -1,0 +1,47 @@
+.Cast-Item{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: none;
+}
+
+.cast-titles .t2{
+    display: inline;
+    padding-left: 6em;
+    text-align: center;
+}
+.cast-titles .t1{
+    display: inline;
+}
+.crew-Titles .t1{
+    display: inline;
+    padding-right: 4em;
+}
+.crew-Titles .t2{
+    display: inline;
+    padding-right: 3em;
+}
+.crew-Titles .t3{
+    display: inline;
+    padding-left: 4em;
+}
+
+.Character-Name{
+    margin-right: auto;
+}
+
+.Credit-Name{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Department-Item{
+    margin-right: auto;
+}
+.Job-Item{
+    margin-right: auto;
+    margin-left: auto;
+}
+.Crew-Name-Item{
+    margin-left: auto;
+    padding-right: 2em;
+}

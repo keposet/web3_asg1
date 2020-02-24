@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './personItem.css'
 
 class CastItem extends Component {
 
@@ -8,8 +9,8 @@ class CastItem extends Component {
     render() { 
         return ( 
             <div className="Cast-Item">
-                <p className="Character-Name">{this.props.character} &nbsp;</p>
-                <p className="Credit-Name">{this.props.name}</p>
+                <div className="Character-Name">{this.props.character} &nbsp;</div>
+                <div className="Credit-Name">{this.props.name}</div>
                 <button className="Credit-button" onClick={this.viewCredit}>View🔭</button>
             </div>
          );
