@@ -5,25 +5,31 @@ class RatingFilter extends React.Component {
 
     handleRadioChange = (e) => {
         const selected = e.target.value;
-        let ratingUpperBound = 11;
-        if(selected === "BETWEEN") {
-            ratingUpperBound = this.state.betweenHigh;
-        } 
         const updatedFilter = {};
+        //Reset the ratings values to their default values (lowest possible and highest)
         updatedFilter['ratingLower'] = -1;
-        updatedFilter['ratingUpper'] = ratingUpperBound;
-        updatedFilter[e.target.nextElementSibling.name] = e.target.nextElementSibling.value;  
+        updatedFilter['ratingUpper'] = 11;
 
+        //Set the upper and lower bounds depending on which radio button got picked
+        if(selected === "BETWEEN") {
+            updatedFilter['ratingUpper'] = this.state.betweenHigh;
+            updatedFilter['ratingLower'] = this.state.betweenLow;
+        } else {
+            updatedFilter[e.target.nextElementSibling.name] = e.target.nextElementSibling.value; 
+        }
+        
+        //Propigate the change up to default view and set the current radio button to the selected value
         this.props.handleRatingChange(updatedFilter['ratingLower'], updatedFilter['ratingUpper'], 'ratingLower', 'ratingUpper');
-
         this.setState({ selected:selected });
     }
 
     handleRatingsChange = (e) => {
+        //Propigate changed value up to default view for view changes
+        this.props.handleChange(e);
+
+        //Update the text box related to the range that was modified
         let ratingVal = e.currentTarget.value;
         let changingProperty = "betweenHigh";
- 
-        this.props.handleChange(e);
         if(this.state.selected === "BELOW") {
            changingProperty = "below";
         } else if (this.state.selected === "ABOVE") {

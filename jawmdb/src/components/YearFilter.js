@@ -6,8 +6,12 @@ class YearFilter extends React.Component {
     handleRadioChange = (e) => {
         const selected = e.target.value;
         const updatedFilter = {};
+        //Reset year and year upper to thier defaults (Lowest and highest)
+            // "" is handled by the yearFilter to set to current year on null and empty strings
         updatedFilter['year'] = -1;
         updatedFilter['yearUpper'] = "";
+
+        //Set the select radios imputs as the current filter
         if(selected === "BETWEEN") {
             updatedFilter['yearUpper'] = document.querySelector("input[name='yearUpper'].between").value;
             updatedFilter['year'] = document.querySelector("input[name='year'].between").value;
@@ -15,8 +19,10 @@ class YearFilter extends React.Component {
             updatedFilter[e.target.nextElementSibling.name] = e.target.nextElementSibling.value;  
         }
 
+        //Propigatet filter change up to DefaultView
         this.props.handleYearChange(updatedFilter['year'], updatedFilter['yearUpper'], 'year', 'yearUpper');
 
+        //Set the selected radio button as current selection
         this.setState({ selected:selected });
     }
 
