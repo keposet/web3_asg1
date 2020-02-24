@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/jawmdb/static/css/main.239eafda.chunk.css",
+    "main.js": "/jawmdb/static/js/main.9140a01d.chunk.js",
+    "main.js.map": "/jawmdb/static/js/main.9140a01d.chunk.js.map",
+    "runtime-main.js": "/jawmdb/static/js/runtime-main.8b418774.js",
+    "runtime-main.js.map": "/jawmdb/static/js/runtime-main.8b418774.js.map",
+    "static/js/2.41f18ed5.chunk.js": "/jawmdb/static/js/2.41f18ed5.chunk.js",
+    "static/js/2.41f18ed5.chunk.js.map": "/jawmdb/static/js/2.41f18ed5.chunk.js.map",
+    "index.html": "/jawmdb/index.html",
+    "precache-manifest.7d235bcc6c68a56a2c190e0a207e3244.js": "/jawmdb/precache-manifest.7d235bcc6c68a56a2c190e0a207e3244.js",
+    "service-worker.js": "/jawmdb/service-worker.js",
+    "static/css/main.239eafda.chunk.css.map": "/jawmdb/static/css/main.239eafda.chunk.css.map",
+    "static/js/2.41f18ed5.chunk.js.LICENSE.txt": "/jawmdb/static/js/2.41f18ed5.chunk.js.LICENSE.txt",
+    "static/media/IMDb_logo.svg": "/jawmdb/static/media/IMDb_logo.64099c07.svg",
+    "static/media/cinema.svg": "/jawmdb/static/media/cinema.c320d72e.svg",
+    "static/media/loading.svg": "/jawmdb/static/media/loading.8375fc44.svg",
+    "static/media/tmdb.svg": "/jawmdb/static/media/tmdb.4906bce9.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8b418774.js",
+    "static/js/2.41f18ed5.chunk.js",
+    "static/css/main.239eafda.chunk.css",
+    "static/js/main.9140a01d.chunk.js"
+  ]
+}
