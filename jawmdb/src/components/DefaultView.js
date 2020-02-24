@@ -93,7 +93,8 @@ class DefaultView extends React.Component {
     clear = () => {
         const filtered = this.filterByTitle(this.state.movies, "");
         filtered.sort( this.sortTitle );
-        this.setState( { filteredMovies: filtered } );
+        setTimeout(()=>{this.setState({filteredMovies: filtered, loading: false})}, 1000);
+        this.setState( {loading: true} );
     }
 
     //Function used by MovieFilter, filters the movies array based on given Title, year range, and rating range.
