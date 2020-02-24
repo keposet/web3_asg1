@@ -66,8 +66,8 @@ class MovieDetail extends Component {
                     alt={film.title}
                     onClick={this.openModal}/>
                     <p>{film.tagline}</p>
+                    <button className="favorites-button" onClick={this.changeFavorites}>❤</button>
                 </div>
-                <button className="favorites-button" onClick={this.changeFavorites}>❤</button>
                 <div className="Film-Data-Card">
                     <div className="Overview-Stub">
                         <h3>Overview</h3>

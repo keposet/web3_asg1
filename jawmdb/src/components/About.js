@@ -10,6 +10,7 @@ const About = function (props) {
             <ul>
                 <li>React-Modal: <a href="https://www.npmjs.com/package/react-modal">react-modal npm</a> </li>
                 <li>Loading svg "Flowing Gradient" from: <a href="https://icons8.com/preloaders/en/free"> icons8 Preloaders</a></li>
+                <li>Logo Icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></li>
                 <li>Hero Image <a href='https://images.unsplash.com/photo-1542204165-65bf26472b9b'>"8mm filmrolls"</a> From: Denise Jans <a href="https://unsplash.com/@dmjdenise">@dmjdenise</a></li>
                 <li><a href="https://unsplash.com/photos/4PxJ_9wEQyI"></a>Curtain Image credit to unsplash user <a href="https://unsplash.com/@djpaine">DJ Paine</a></li>
                 <li>Font Awesome Icons from <a href="https://fontawesome.com/how-to-use/on-the-web/using-with/react">react-fontawesome</a> </li>

@@ -5,6 +5,7 @@ import  FavoritesList from './FavoritesList.js';
 import MovieDetail from './MovieDetail';
 import PersonDetail from './PersonDetail';
 import PersonnelList from './PersonnelList';
+import loading from '../loading.svg'
 import './DetailsView.css';
 class DetailsView extends Component {
 
@@ -75,7 +76,7 @@ class DetailsView extends Component {
         if (this.state.loading) {
             //render loading gif
             return (
-                <div>loading</div>
+                <img className="loading" src={loading} alt="loading"/>
             );
         } else {
             if (this.state.filmView) {

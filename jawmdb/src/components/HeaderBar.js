@@ -1,5 +1,5 @@
 import React from 'react'; 
-import logo from '../logo.svg'
+import logo from '../cinema.svg'
 import { Link } from 'react-router-dom';
 
 const HeaderBar = function (props) {   

@@ -15,11 +15,30 @@
 }
 
 .Film-Data-Card{
+    margin-top: 1em;
     padding: 2em;
     background-color: var(--accent-dark);
     border-radius: 10px;
 
 
+}
+.favorites-button{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.Release-Stub p{
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
+
+.Star-Rating{
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
+
+.Overview-Stub p{
+    margin-left: 2em;
+    margin-bottom: 1em;
 }
 
 .stub-info{
